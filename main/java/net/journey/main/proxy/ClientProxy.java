@@ -20,12 +20,12 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void registerModModels() {
-		for(String s : JourneyItems.items) {
+		for(String s : JourneyItems.itemNames) {
 			Item i = GameRegistry.findItem(SlayerAPI.MOD_ID, s);
 			SlayerAPI.registerItemRender(i, s);
 		}
 		
-		for(String s : JourneyBlocks.blocks) {
+		for(String s : JourneyBlocks.blockName) {
 			Item i = GameRegistry.findItem(SlayerAPI.MOD_ID, s);
 			SlayerAPI.registerItemRender(i, s);
 		}

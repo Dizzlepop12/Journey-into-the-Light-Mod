@@ -2,12 +2,28 @@ package net.journey.main;
 
 import java.util.ArrayList;
 
+import net.journey.main.blocks.BlockCloud;
+import net.journey.main.blocks.BlockDungeonBlock;
+import net.journey.main.blocks.BlockModFlower;
+import net.journey.main.blocks.BlockTrophy;
+import net.journey.main.blocks.container.BlockJourneyChest;
 import net.minecraft.block.Block;
+import net.slayerapi.base.EnumMaterialTypes;
+import net.slayerapi.base.EnumToolType;
+import net.slayerapi.block.BlockMod;
+import net.slayerapi.block.BlockModBars;
+import net.slayerapi.block.BlockModBush;
+import net.slayerapi.block.BlockModFence;
+import net.slayerapi.block.BlockModGlass;
+import net.slayerapi.block.BlockModGrass;
+import net.slayerapi.block.BlockModLeaves;
+import net.slayerapi.block.BlockModLog;
 import net.slayerapi.block.BlockModOre;
+import net.slayerapi.block.BlockModStairs;
 
 public class JourneyBlocks {
 
-	public static ArrayList<String> blocks = new ArrayList<String>();
+	public static ArrayList<String> blockName = new ArrayList<String>();
 	
 	/*public static final Block amethystOre = new BlockModOre("amethystOre", "Amethyst Ore").setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block amethystOre = new BlockModOre("amethystOre", "Amethyst Ore").setHarvestLevel(EnumToolType.IRON_PICK);
@@ -94,13 +110,13 @@ public class JourneyBlocks {
 	public static final Block depthsLog = new BlockModLog("depthsLog", "Depths Log");
 	public static final Block depthsPlank = new BlockMod(EnumMaterialTypes.WOOD, "depthsPlank", "Depths Plank", 1.0F);
 	public static final Block depthsStairs = new BlockModStairs(depthsPlank, "depthsStairs", "Depths Stairs");
-	public static final Block depthsLeaves = new BlockDepthsLeaves("depthsLeaves", "Depths Leaves", 1.0F);
+	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", "Depths Leaves", 1.0F);
 	public static final Block darkBrick = new BlockMod("darkBrick", "Dark Brick", 2.0F).setBlockUnbreakable().setResistance(10000000.0F);
 	public static final Block darkFloor = new BlockMod("darkFloor", "Dark Floor", 2.0F).setBlockUnbreakable().setResistance(10000000.0F);
 	//public static final Block darkTile = new BlockMod("darkTile", "Dark Tile", 2.0F).setBlockUnbreakable();
 	public static final Block darkShingle = new BlockMod("darkShingle", "Dark Shingle", 2.0F).setBlockUnbreakable().setResistance(10000000.0F);
 	
-	public static final Block iceLeaves = new BlockDepthsLeaves("iceLeaves", "Ice Leaves", 1.0F);
+	public static final Block iceLeaves = new BlockModLeaves("iceLeaves", "Ice Leaves", 1.0F);
 	
 
 	//public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", 2.0F);
@@ -288,8 +304,8 @@ public class JourneyBlocks {
 	public static final Block hotBrick_fence = new BlockModFence(hotBrick, "hotBrickFence", "Hot Brick Fence");
 	public static final Block hotBrick_stairs = new BlockModStairs(hotBrick, "hotBrickStairs", "Hor Brick Stairs");
 
-	public static final Block hotGlass = new BlockJoinedGlass("hotGlass", "Hot Glass");
-	public static final Block smoothGlass = new BlockJoinedGlass("smoothGlass", "Smooth Glass");
+	public static final Block hotGlass = new BlockModGlass("hotGlass", "Hot Glass");
+	public static final Block smoothGlass = new BlockModGlass("smoothGlass", "Smooth Glass");
 	//public static final Block hotGlassPane = new BlockJoinedPane("hotGlass");
 	//public static final Block smoothGlassPane = new BlockJoinedPane("smoothGlass");
 	
@@ -303,8 +319,8 @@ public class JourneyBlocks {
 	public static final Block darkbloomTop = new BlockDarkbloom("darkbloomTop", "Darkbloom", true);
 	public static final Block darkbloomBottom = new BlockDarkbloom("darkbloomBottom", "Darkbloom", false);
 	
-	public static final Block colouredBricks = new BlockColouredBricks();
-	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
+	//public static final Block colouredBricks = new BlockColouredBricks();
+	//public static final Block miniColouredBricks = new BlockMiniColouredBricks();
 	public static final Block redGlowshroomTop = new BlockGlowshroom("redGlowshroomTop", "Red Glowshroom", true);
 	public static final Block redGlowshroomBottom = new BlockGlowshroom("redGlowshroomBottom", "Red Glowshroom", false);
 	
@@ -325,7 +341,7 @@ public class JourneyBlocks {
 	public static final BlockModFlower goldenStalks = (BlockModFlower) new BlockModFlower("goldenStalks", "Golden Stalks").setCreativeTab(null);
 		
 	public static final Block workshopCarpet = new BlockMod(EnumMaterialTypes.WOOL, "workshopCarpet", "Workshop Carpet", 0.5F);
-	public static final Block frozenGlass = new BlockJoinedGlass("frozenGlass", "Frozen Glass");
+	public static final Block frozenGlass = new BlockModGlass("frozenGlass", "Frozen Glass");
 	//public static final Block frozenPane = new BlockJoinedPane("frozenGlass");
 	public static final Block frozenLamp = new BlockMod(EnumMaterialTypes.GLASS, "frozenLamp", "Frozen Lamp", 0.5F).setLightLevel(1.0F).setCreativeTab(JourneyTabs.decoration);
 	public static final Block workshopStone = new BlockMod(EnumMaterialTypes.STONE, "workshopStone", "Workshop Stone", 0.5F);

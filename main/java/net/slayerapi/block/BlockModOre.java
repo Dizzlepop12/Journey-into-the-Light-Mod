@@ -3,8 +3,11 @@ package net.slayerapi.block;
 import java.util.Random;
 
 import net.journey.main.JourneyBlocks;
+import net.journey.main.JourneyItems;
+import net.journey.main.client.render.particle.OreParticleFX;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
@@ -19,7 +22,7 @@ public class BlockModOre extends BlockMod {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random r) {
+	public void randomDisplayTick(IBlockState state, World worldIn, BlockPos pos, Random r) {
 		renderParticle(worldIn, pos.getX(), pos.getY(), pos.getZ());
 	}
 	@SideOnly(Side.CLIENT)
@@ -78,12 +81,12 @@ public class BlockModOre extends BlockMod {
 			double d1 = (double)((float)x + random.nextFloat());
 			double d2 = (double)((float)y + random.nextFloat());
 			double d3 = (double)((float)z + random.nextFloat());
-			if(l == 0 && !w.getBlockState(new BlockPos(x, y + 1, z)).getBlock().isOpaqueCube()) d2 = (double)(y + 1) + d0;
-			if(l == 1 && !w.getBlockState(new BlockPos(x, y - 1, z)).getBlock().isOpaqueCube()) d2 = (double)(y + 0) - d0;
-			if(l == 2 && !w.getBlockState(new BlockPos(x, y, z + 1)).getBlock().isOpaqueCube()) d3 = (double)(z + 1) + d0;    
-			if(l == 3 && !w.getBlockState(new BlockPos(x, y, z - 1)).getBlock().isOpaqueCube()) d3 = (double)(z + 0) - d0;
-			if(l == 4 && !w.getBlockState(new BlockPos(x + 1, y, z)).getBlock().isOpaqueCube()) d1 = (double)(x + 1) + d0;
-			if(l == 5 && !w.getBlockState(new BlockPos(x - 1, y, z)).getBlock().isOpaqueCube()) d1 = (double)(x + 0) - d0;
+			if(l == 0 && !w.getBlockState(new BlockPos(x, y + 1, z)).getBlock().isOpaqueCube(getDefaultState())) d2 = (double)(y + 1) + d0;
+			if(l == 1 && !w.getBlockState(new BlockPos(x, y - 1, z)).getBlock().isOpaqueCube(getDefaultState())) d2 = (double)(y + 0) - d0;
+			if(l == 2 && !w.getBlockState(new BlockPos(x, y, z + 1)).getBlock().isOpaqueCube(getDefaultState())) d3 = (double)(z + 1) + d0;    
+			if(l == 3 && !w.getBlockState(new BlockPos(x, y, z - 1)).getBlock().isOpaqueCube(getDefaultState())) d3 = (double)(z + 0) - d0;
+			if(l == 4 && !w.getBlockState(new BlockPos(x + 1, y, z)).getBlock().isOpaqueCube(getDefaultState())) d1 = (double)(x + 1) + d0;
+			if(l == 5 && !w.getBlockState(new BlockPos(x - 1, y, z)).getBlock().isOpaqueCube(getDefaultState())) d1 = (double)(x + 0) - d0;
 			if(d1 < (double)x || d1 > (double)(x + 1) || d2 < 0.0D || d2 > (double)(y + 1) || d3 < (double)z || d3 > (double)(z + 1)) {
 				OreParticleFX var20 = new OreParticleFX(w, d1, d2, d3, r, g, b);
 				FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);

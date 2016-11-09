@@ -3,26 +3,29 @@ package net.slayerapi.block;
 import java.util.Random;
 
 import net.journey.main.JourneyBlocks;
+import net.journey.main.JourneyTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.slayerapi.base.EnumMaterialTypes;
+import net.slayerapi.base.EnumToolType;
 import net.slayerapi.base.LangRegistry;
+import net.slayerapi.base.SlayerAPI;
 
 public class BlockMod extends Block{
 
 	protected EnumMaterialTypes blockType;
 	protected Item drop = null;
 	protected Random rand;
-	public int boostBrightnessLow;
-	public int boostBrightnessHigh;
-	public boolean enhanceBrightness;
 	public String name;
 	protected boolean isOpaque = true, isNormalCube = true;
 	
@@ -52,7 +55,7 @@ public class BlockMod extends Block{
 		this.blockType = blockType;
 		setHardness(2.0F);
 		rand = new Random();
-		setStepSound(blockType.getSound());
+		setSoundType(blockType.getSound());
 		setCreativeTab(tab);
 		setUnlocalizedName(name);
 		this.name = name; 
@@ -65,7 +68,7 @@ public class BlockMod extends Block{
 		LangRegistry.addBlock(name, finalName);
 		this.blockType = blockType;
 		rand = new Random();
-		setStepSound(blockType.getSound());
+		setSoundType(blockType.getSound());
 		setCreativeTab(tab);
 		setUnlocalizedName(name);
 		setHardness(hardness);
@@ -95,14 +98,9 @@ public class BlockMod extends Block{
 	}
 
 	@Override
-	public int getRenderType() {
-		return 3;
-	}
-
-	@Override
 	@SideOnly(Side.CLIENT)
-	public EnumWorldBlockLayer getBlockLayer() {
-		return EnumWorldBlockLayer.SOLID;
+	public BlockRenderLayer getBlockLayer() {
+		return BlockRenderLayer.SOLID;
 	}
 
 	@Override
@@ -111,18 +109,18 @@ public class BlockMod extends Block{
 	}
 	
 	@Override
-	public boolean isOpaqueCube() {
+	public boolean isOpaqueCube(IBlockState s) {
 		return isOpaque;
 	}
 
 	@Override
-	public boolean isNormalCube() {
+	public boolean isNormalCube(IBlockState s) {
 		return false;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void randomDisplayTick(World w, BlockPos pos, IBlockState state, Random random) {}
+	public void randomDisplayTick(IBlockState s, World w, BlockPos pos, Random random) {}
 
 	@Override
 	public boolean isFireSource(World world, BlockPos pos, EnumFacing side) {

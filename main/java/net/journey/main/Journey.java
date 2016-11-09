@@ -16,7 +16,7 @@ import net.slayerapi.base.SlayerAPI;
 @Mod(name = SlayerAPI.MOD_NAME, modid = SlayerAPI.MOD_ID, version = SlayerAPI.MOD_VERSION)
 public class Journey {
 
-	@Instance(SlayerAPI.MOD_ID)
+	@Instance(SlayerAPI.MOD_ID) 
 	public static Journey instance;
 	
 	@SidedProxy(clientSide = "net.journey.main.proxy.ClientProxy", serverSide = "net.journey.main.proxy.CommonProxy")

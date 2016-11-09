@@ -1,5 +1,6 @@
 package net.journey.main.proxy;
 
+import net.journey.main.enums.EnumSounds;
 import net.journey.main.util.Config;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraftforge.common.BiomeDictionary;
@@ -22,6 +23,7 @@ public class CommonProxy {
 	
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.init(event);
+		EnumSounds.init();
 		if(SlayerAPI.DEVMODE) LangRegistry.instance.register();
 	}
 	

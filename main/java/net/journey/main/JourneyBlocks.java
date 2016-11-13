@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import net.journey.main.blocks.BlockCloud;
 import net.journey.main.blocks.BlockDungeonBlock;
+import net.journey.main.blocks.BlockIgniter;
+import net.journey.main.blocks.BlockLock;
 import net.journey.main.blocks.BlockModFlower;
 import net.journey.main.blocks.BlockTrophy;
 import net.journey.main.blocks.container.BlockJourneyChest;
@@ -24,6 +26,8 @@ import net.slayerapi.block.BlockModStairs;
 public class JourneyBlocks {
 
 	public static ArrayList<String> blockName = new ArrayList<String>();
+	
+	/* Ores */
 	
 	/*public static final Block amethystOre = new BlockModOre("amethystOre", "Amethyst Ore").setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block amethystOre = new BlockModOre("amethystOre", "Amethyst Ore").setHarvestLevel(EnumToolType.IRON_PICK);
@@ -49,6 +53,7 @@ public class JourneyBlocks {
 	public static final Block luniteOre = new BlockModOre("luniteOre", "Lunite Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block firestoneOre = new BlockModOre("firestoneOre", "Firestone Ores").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 
+	/* Ore Blocks */
 	public static final Block sapphireBlock = new BlockModOre("sapphireBlock", "Sapphire Block").setHarvestLevel(EnumToolType.STONE_PICK);
 	public static final Block shadiumBlock = new BlockModOre("shadiumBlock", "Shadium Block").setHarvestLevel(EnumToolType.STONE_PICK);
 	public static final Block luniumBlock = new BlockModOre("luniumBlock", "Lunium Block").setHarvestLevel(EnumToolType.STONE_PICK);
@@ -70,13 +75,13 @@ public class JourneyBlocks {
 	public static final Block witherwoodLeaves = new BlockModLeaves("witherwoodLeaves", "Witherwood Leaves", 1.0F);
 	public static final Block sizzlerWoodLeaves = new BlockModLeaves("sizzlerWoodLeaves", "Deadblood Leaves", 2.0F);
 	public static final Block sizzlerWoodLog = new BlockModLog("sizzlerWoodLog", "Deadblood Bark");
-	public static final BlockNetherFlower deathGrass = new BlockNetherFlower("deathGrass", "Death Grass");
-	public static final BlockNetherFlower hellBell = new BlockNetherFlower("hellBell", "Hell Bell");
+	public static final BlockModFlower deathGrass = new BlockModFlower("deathGrass", "Death Grass", true);
+	public static final BlockModFlower hellBell = new BlockModFlower("hellBell", "Hell Bell", true);
 	public static final Block hellshroom = new BlockNetherPlant("hellshroom", "Hellshroom");
 	public static final Block bleedheartFruit = new BlockFruitCrop("bleedheartFruit", "Bleedheart Fruit");
 	public static final Block heatSoil = new BlockMod(EnumMaterialTypes.DIRT, "heatSoil", "Nethic Soil", 2.0F);
 
-	public static final Block redBirchLeaves = new BlockBiomeLeaves("redBirchLeaves", "Red Birch Leaves", 1.0F);
+	public static final Block redBirchLeaves = new BlockModLeaves("redBirchLeaves", "Red Birch Leaves", 1.0F);
 	
 	public static final Block igniterOn = new BlockIgniter("igniterOn", "Redstone Igniter");
 	public static final Block igniter = new BlockIgniter("igniter", "Redstone Igniter");

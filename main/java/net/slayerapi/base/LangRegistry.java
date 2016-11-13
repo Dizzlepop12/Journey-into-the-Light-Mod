@@ -6,6 +6,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import net.journey.main.util.EnumArmor;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.slayerapi.item.ItemModArmor;
+
 public class LangRegistry {
 
 	public static LangRegistry instance = new LangRegistry();
@@ -82,13 +86,13 @@ public class LangRegistry {
 		mobFinal.add(finalName);
 	}
 
-	/*public static void addArmour(ItemModArmor a, EnumArmor ar, int t) {
+	public static void addArmour(ItemModArmor a, EnumArmor ar, EntityEquipmentSlot t) {
 		armourUnloc.add(a.getUnlocalizedName());
-		int HEAD = 0, BODY = 1, LEGS = 2, BOOTS = 3;
+		EntityEquipmentSlot HEAD = EntityEquipmentSlot.HEAD, BODY = EntityEquipmentSlot.CHEST, LEGS = EntityEquipmentSlot.LEGS, BOOTS = EntityEquipmentSlot.FEET;
 		armorType.add(ar.getFinalName());
 		String part = t == HEAD ? "Helmet" : t == BODY ? "Chestplate" : t == LEGS ? "Leggings" : t == BOOTS ? "Boots" : "UNKNOWN";
 		armorPiece.add(part);
-	}*/
+	}
 
 	public void block() {
 		for(int i = 0; i < blockUnloc.size(); i++)

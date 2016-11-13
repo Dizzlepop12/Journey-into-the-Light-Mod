@@ -2,12 +2,34 @@ package net.journey.main;
 
 import java.util.ArrayList;
 
+import net.journey.main.enums.EnumKnowledge;
+import net.journey.main.items.ItemDetractor;
+import net.journey.main.items.ItemFlameCoin;
+import net.journey.main.items.ItemGun;
+import net.journey.main.items.ItemHammer;
+import net.journey.main.items.ItemHealth;
+import net.journey.main.items.ItemKnowledge;
+import net.journey.main.items.ItemPiercer;
+import net.journey.main.items.ItemSpecificDimensionSpawner;
+import net.journey.main.items.ItemStaff;
 import net.journey.main.util.Config;
+import net.journey.main.util.EnumArmor;
+import net.journey.main.util.EssenceToolMaterial;
 import net.minecraft.init.MobEffects;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.common.util.EnumHelper;
+import net.slayerapi.item.ItemMod;
+import net.slayerapi.item.ItemModArmor;
+import net.slayerapi.item.ItemModAxe;
+import net.slayerapi.item.ItemModFood;
+import net.slayerapi.item.ItemModHoe;
+import net.slayerapi.item.ItemModPickaxe;
+import net.slayerapi.item.ItemModShovel;
+import net.slayerapi.item.ItemModSword;
+import net.slayerapi.item.ItemMultiTool;
 
 public class JourneyItems {
 	
@@ -59,7 +81,7 @@ public class JourneyItems {
 
 	public static ArrayList<String> itemNames = new ArrayList<String>();
 
-	public static int HEAD = 0, BODY = 1, LEGS = 2, BOOTS = 3;
+	public static EntityEquipmentSlot HEAD = EntityEquipmentSlot.HEAD, BODY = EntityEquipmentSlot.CHEST, LEGS = EntityEquipmentSlot.LEGS, BOOTS = EntityEquipmentSlot.FEET;
 
 	public static final Item heartSml = new ItemHealth("heartSml", "Heart: Tier 1", 1, 2, 0.2F, false, false, 60, false, true);
 	public static final Item heartMed = new ItemHealth("heartMed", "Heart: Tier 2", 2, 2, 0.2F, false, false, 60, false, true);
@@ -187,7 +209,7 @@ public class JourneyItems {
 	public static final Item rockShard = new ItemMod("rockShard", "Rock Shard");
 	//public static final Item plasmaBall = new ItemMod("plasmaBall");
 
-	public static final Item bloodcrustMultiTool = new ItemMultiTool("bloodcrustMultiTool", "Bloodcrust Multi Tool", EssenceToolMaterial.bloodcrust_MULTI_TOOL, 1750);
+	public static final Item bloodcrustMultiTool = new ItemMultiTool("bloodcrustMultiTool", "Bloodcrust Multi Tool", EssenceToolMaterial.BLOODCRUST_MULTI_TOOL, 1750);
 	public static final Item shadiumMultiTool = new ItemMultiTool("shadiumMultiTool", "Shadium Multi Tool", EssenceToolMaterial.SHADIUM_MULTI_TOOL, 1670);
 	public static final Item celestiumMultiTool = new ItemMultiTool("celestiumMultiTool", "Celestium Multi Tool", EssenceToolMaterial.CELESTIUM_MULTI_TOOL, 1820);
 	public static final Item luniumMultiTool = new ItemMultiTool("luniumMultiTool", "Lunium Multi Tool", EssenceToolMaterial.LUNIUM_MULTI_TOOL, 1670);
@@ -205,7 +227,7 @@ public class JourneyItems {
 	public static final Item goldMultiTool = new ItemMultiTool("goldMultiTool", "Gold Multi Tool", EssenceToolMaterial.GOLD_MULTI_TOOL, 33);
 	public static final Item diamondMultiTool = new ItemMultiTool("diamondMultiTool", "Diamond Multi Tool", EssenceToolMaterial.DIAMOND_MULTI_TOOL, 1562);
 
-	public static final Item bloodcrustPickaxe = new ItemModPickaxe("bloodcrustPickaxe", "Bloodcrust Pickaxe", EssenceToolMaterial.bloodcrust);
+	public static final Item bloodcrustPickaxe = new ItemModPickaxe("bloodcrustPickaxe", "Bloodcrust Pickaxe", EssenceToolMaterial.BLOODCRUST);
 	public static final Item shadiumPickaxe = new ItemModPickaxe("shadiumPickaxe", "Shadium Pickaxe", EssenceToolMaterial.SHADIUM);
 	public static final Item celestiumPickaxe = new ItemModPickaxe("celestiumPickaxe", "Celestium Pickaxe", EssenceToolMaterial.CELESTIUM);
 	public static final Item luniumPickaxe = new ItemModPickaxe("luniumPickaxe", "Lunium Pickaxe", EssenceToolMaterial.LUNIUM);
@@ -218,7 +240,7 @@ public class JourneyItems {
 	public static final Item storonPickaxe = new ItemModPickaxe("storonPickaxe", "Storon Pickaxe", EssenceToolMaterial.KORITE);
 	public static final Item mekyumPickaxe = new ItemModPickaxe("mekyumPickaxe", "Mekyum Pickaxe", EssenceToolMaterial.KORITE);
 
-	public static final Item bloodcrustShovel = new ItemModShovel("bloodcrustShovel", "Bloodcrust Shovel", EssenceToolMaterial.bloodcrust);
+	public static final Item bloodcrustShovel = new ItemModShovel("bloodcrustShovel", "Bloodcrust Shovel", EssenceToolMaterial.BLOODCRUST);
 	public static final Item shadiumShovel = new ItemModShovel("shadiumShovel", "Shadium Shovel", EssenceToolMaterial.SHADIUM);
 	public static final Item celestiumShovel = new ItemModShovel("celestiumShovel", "Celestium Shovel", EssenceToolMaterial.CELESTIUM);
 	public static final Item luniumShovel = new ItemModShovel("luniumShovel", "Lunium Shovel", EssenceToolMaterial.LUNIUM);
@@ -231,7 +253,7 @@ public class JourneyItems {
 	public static final Item storonShovel = new ItemModShovel("storonShovel", "Storon Shovel", EssenceToolMaterial.KORITE);
 	public static final Item mekyumShovel = new ItemModShovel("mekyumShovel", "Mekyum Shovel", EssenceToolMaterial.KORITE);
 
-	public static final Item bloodcrustAxe = new ItemModAxe("bloodcrustAxe", "Bloodcrust Axe", EssenceToolMaterial.bloodcrust);
+	public static final Item bloodcrustAxe = new ItemModAxe("bloodcrustAxe", "Bloodcrust Axe", EssenceToolMaterial.BLOODCRUST);
 	public static final Item shadiumAxe = new ItemModAxe("shadiumAxe", "Shadium Axe", EssenceToolMaterial.SHADIUM);
 	public static final Item celestiumAxe = new ItemModAxe("celestiumAxe", "Celestium Axe", EssenceToolMaterial.CELESTIUM);
 	public static final Item luniumAxe = new ItemModAxe("luniumAxe", "Lunium Axe", EssenceToolMaterial.LUNIUM);
@@ -244,7 +266,7 @@ public class JourneyItems {
 	public static final Item storonAxe = new ItemModAxe("storonAxe", "Storon Axe", EssenceToolMaterial.KORITE);
 	public static final Item mekyumAxe = new ItemModAxe("mekyumAxe", "Mekyum Axe", EssenceToolMaterial.KORITE);
 
-	public static final Item bloodcrustHoe = new ItemModHoe("bloodcrustHoe", "Bloodcrust Hoe", EssenceToolMaterial.bloodcrust);
+	public static final Item bloodcrustHoe = new ItemModHoe("bloodcrustHoe", "Bloodcrust Hoe", EssenceToolMaterial.BLOODCRUST);
 	public static final Item shadiumHoe = new ItemModHoe("shadiumHoe", "Shadium Hoe", EssenceToolMaterial.SHADIUM);
 	public static final Item celestiumHoe = new ItemModHoe("celestiumHoe", "Celestium Hoe", EssenceToolMaterial.CELESTIUM);
 	public static final Item luniumHoe = new ItemModHoe("luniumHoe", "Lunium Hoe", EssenceToolMaterial.LUNIUM);
@@ -259,7 +281,7 @@ public class JourneyItems {
 	
 	public static final Item multiToolOfEternalSmelting = new ItemMultiTool("multiToolOfEternalSmelting", "Multi Tool of Eternal Smelting", EssenceToolMaterial.SMELTING_TOOL, 512);
 
-	public static final Item bloodcrustSword = new ItemFireSword("bloodcrustSword", "Bloodcrust Sword", EssenceToolMaterial.bloodcrust_SWORD);
+	public static final Item bloodcrustSword = new ItemFireSword("bloodcrustSword", "Bloodcrust Sword", EssenceToolMaterial.BLOODCRUST_SWORD);
 	public static final Item shadiumSword = new ItemFreezeSword("shadiumSword", "Shadium Sword", EssenceToolMaterial.SHADIUM_SWORD);
 	public static final Item celestiumSword = new ItemModSword("celestiumSword", "Celestium Sword", EssenceToolMaterial.CELESTIUM_SWORD);
 	public static final Item luniumSword = new ItemModSword("luniumSword", "Lunium Sword", EssenceToolMaterial.LUNIUM_SWORD);
@@ -486,11 +508,6 @@ public class JourneyItems {
 	public static final Item starlightLegs = new ItemModArmor(EnumArmor.STARLIGHT, LEGS);
 	public static final Item starlightBoots = new ItemModArmor(EnumArmor.STARLIGHT, BOOTS);
 	
-	public static final Item bloodcrustHelmet = new ItemModArmor(EnumArmor.BLOODCRUST, HEAD);
-	public static final Item bloodcrustChest = new ItemModArmor(EnumArmor.BLOODCRUST, BODY);
-	public static final Item bloodcrustLegs = new ItemModArmor(EnumArmor.BLOODCRUST, LEGS);
-	public static final Item bloodcrustBoots = new ItemModArmor(EnumArmor.BLOODCRUST, BOOTS);
-	
 	public static final Item blazehornHelmet = new ItemModArmor(EnumArmor.BLAZEHORN, HEAD);
 	public static final Item blazehornChest = new ItemModArmor(EnumArmor.BLAZEHORN, BODY);
 	public static final Item blazehornLegs = new ItemModArmor(EnumArmor.BLAZEHORN, LEGS);
@@ -501,16 +518,16 @@ public class JourneyItems {
 	public static final Item bleedrockLegs = new ItemModArmor(EnumArmor.BLEEDROCK, LEGS);
 	public static final Item bleedrockBoots = new ItemModArmor(EnumArmor.BLEEDROCK, BOOTS);
 	
-	public static final Item rockyBattleaxe = new ItemBattleAxe("rockyBattleaxe", "Rocky Battleaxe", EssenceToolMaterial.ROCKY_BATTLEAXE);
-	public static final Item crystalizedBattleaxe = new ItemBattleAxe("crystalizedBattleaxe", "Crystalized Battleaxe", EssenceToolMaterial.CRYSTAL_BATTLEAXE);
-	public static final Item backBiter = new ItemBattleAxe("backBiter", "Back Biter", EssenceToolMaterial.BACK_BITER);
-	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", "Dawn Breaker", EssenceToolMaterial.DAWN_BREAKER);
-	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", "Tempest Battleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
-	public static final Item bronzedBattleaxe = new ItemBattleAxe("bronzedBattleaxe", "Bronzed Battleaxe", EssenceToolMaterial.BRONZED_BATTLEAXE);
-	public static final Item celestiteBattleaxe = new ItemBattleAxe("celestiteBattleaxe", "Celestite Battleaxe", EssenceToolMaterial.CELESTITE_BATTLEAXE);
-	public static final Item storumBattleaxe = new ItemBattleAxe("storumBattleaxe", "Storum Battleaxe", EssenceToolMaterial.STORUM_BATTLEAXE);
-	public static final Item celekiumBattleaxe = new ItemBattleAxe("celekiumBattleaxe", "Celekium Battleaxe", EssenceToolMaterial.CELEKIUM_BATTLEAXE);
-	public static final Item thunderbirdBattleaxe = new ItemBattleAxe("thunderbirdBattleaxe", "Thunderbird Battleaxe", EssenceToolMaterial.THUNDERBIRD_BATTLEAXE);
+	public static final Item rockyBattleaxe = new ItemModSword("rockyBattleaxe", "Rocky Battleaxe", EssenceToolMaterial.ROCKY_BATTLEAXE);
+	public static final Item crystalizedBattleaxe = new ItemModSword("crystalizedBattleaxe", "Crystalized Battleaxe", EssenceToolMaterial.CRYSTAL_BATTLEAXE);
+	public static final Item backBiter = new ItemModSword("backBiter", "Back Biter", EssenceToolMaterial.BACK_BITER);
+	public static final Item dawnBreaker = new ItemModSword("dawnBreaker", "Dawn Breaker", EssenceToolMaterial.DAWN_BREAKER);
+	public static final Item tempestBattleaxe = new ItemModSword("tempestBattleaxe", "Tempest Battleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
+	public static final Item bronzedBattleaxe = new ItemModSword("bronzedBattleaxe", "Bronzed Battleaxe", EssenceToolMaterial.BRONZED_BATTLEAXE);
+	public static final Item celestiteBattleaxe = new ItemModSword("celestiteBattleaxe", "Celestite Battleaxe", EssenceToolMaterial.CELESTITE_BATTLEAXE);
+	public static final Item storumBattleaxe = new ItemModSword("storumBattleaxe", "Storum Battleaxe", EssenceToolMaterial.STORUM_BATTLEAXE);
+	public static final Item celekiumBattleaxe = new ItemModSword("celekiumBattleaxe", "Celekium Battleaxe", EssenceToolMaterial.CELEKIUM_BATTLEAXE);
+	public static final Item thunderbirdBattleaxe = new ItemModSword("thunderbirdBattleaxe", "Thunderbird Battleaxe", EssenceToolMaterial.THUNDERBIRD_BATTLEAXE);
 
 	public static final Item staffOfCrystal = new ItemStaff("staffOfCrystal", "Staff of Crystal", false, 3, 1000, 10, false, EntityIceBall.class);
 	public static final Item staffOfDivineStone = new ItemStaff("staffOfDivineStone", "Staff of Divine Stone", false, 3, 1000, 9, false, EntityRock.class);

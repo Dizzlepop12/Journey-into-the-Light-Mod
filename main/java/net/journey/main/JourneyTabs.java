@@ -52,7 +52,7 @@ public class JourneyTabs extends CreativeTabs {
 	public static void init(){
 		blocks.setIcon(JourneyBlocks.cloudiaRock);
 		decoration.setIcon(JourneyBlocks.boilingLamp);
-		/*items.setIcon(JourneyItems.koriteIngot);
+		items.setIcon(JourneyItems.koriteIngot);
 		tools.setIcon(JourneyItems.multiToolOfEternalSmelting);
 		swords.setIcon(JourneyItems.terronicBlade);
 		battleaxes.setIcon(JourneyItems.backBiter);
@@ -63,25 +63,9 @@ public class JourneyTabs extends CreativeTabs {
 		misc.setIcon(JourneyItems.weakDarkEnergyPotion);
 		armor.setIcon(JourneyItems.twilightHelmet);
 		spawners.setIcon(JourneyItems.sentryKingOrb);
-		crops.setIcon(JourneyCrops.crackenCaneSeeds);
+		//crops.setIcon(JourneyCrops.crackenCaneSeeds);
 		machineBlocks.setIcon(JourneyBlocks.summoningTable);
 		portalBlocks.setIcon(JourneyBlocks.eucaPortal);
-		hammers.setIcon(JourneyItems.flamingHammer);*/
-		
-		items.setIcon(Items.ACACIA_BOAT);
-		tools.setIcon(Items.ACACIA_BOAT);
-		swords.setIcon(Items.ACACIA_BOAT);
-		battleaxes.setIcon(Items.ACACIA_BOAT);
-		bows.setIcon(Items.ACACIA_BOAT);
-		piercers.setIcon(Items.ACACIA_BOAT);
-		staves.setIcon(Items.ACACIA_BOAT);
-		util.setIcon(Items.ACACIA_BOAT);
-		misc.setIcon(Items.ACACIA_BOAT);
-		armor.setIcon(Items.ACACIA_BOAT);
-		spawners.setIcon(Items.ACACIA_BOAT);
-		crops.setIcon(Items.ACACIA_BOAT);
-		machineBlocks.setIcon(Items.ACACIA_BOAT);
-		portalBlocks.setIcon(Items.ACACIA_BOAT);
-		hammers.setIcon(Items.ACACIA_BOAT);
+		hammers.setIcon(JourneyItems.flamingHammer);
 	}
 }

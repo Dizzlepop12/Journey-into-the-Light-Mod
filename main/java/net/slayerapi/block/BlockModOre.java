@@ -54,7 +54,7 @@ public class BlockModOre extends BlockMod {
 			g = 0.5F;
 			b = 0.0F;
 		}
-		if(this == JourneyBlocks.hellstoneBlock || this == JourneyBlocks.hellstoneOre) {
+		if(this == JourneyBlocks.bloodcrustBlock || this == JourneyBlocks.bloodcrustOre) {
 			r = 1.0F;
 			g = 0.0F;
 			b = 0.0F;

@@ -2,43 +2,24 @@ package net.journey.main;
 
 import java.util.ArrayList;
 
-import net.journey.main.blocks.BlockCloud;
-import net.journey.main.blocks.BlockDungeonBlock;
-import net.journey.main.blocks.BlockIgniter;
-import net.journey.main.blocks.BlockLock;
-import net.journey.main.blocks.BlockModFlower;
-import net.journey.main.blocks.BlockTrophy;
-import net.journey.main.blocks.container.BlockJourneyChest;
-import net.minecraft.block.Block;
-import net.slayerapi.base.EnumMaterialTypes;
-import net.slayerapi.base.EnumToolType;
-import net.slayerapi.block.BlockMod;
-import net.slayerapi.block.BlockModBars;
-import net.slayerapi.block.BlockModBush;
-import net.slayerapi.block.BlockModFence;
-import net.slayerapi.block.BlockModGlass;
-import net.slayerapi.block.BlockModGrass;
-import net.slayerapi.block.BlockModLeaves;
-import net.slayerapi.block.BlockModLog;
-import net.slayerapi.block.BlockModOre;
-import net.slayerapi.block.BlockModStairs;
+import net.journey.main.blocks.*;
+import net.journey.main.blocks.portals.*;
+import net.journey.main.blocks.container.*;
+import net.minecraft.block.*;
+import net.slayerapi.base.*;
+import net.slayerapi.block.*;
 
 public class JourneyBlocks {
 
 	public static ArrayList<String> blockName = new ArrayList<String>();
 	
-	/* Ores */
-	
-	/*public static final Block amethystOre = new BlockModOre("amethystOre", "Amethyst Ore").setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block amethystOre = new BlockModOre("amethystOre", "Amethyst Ore").setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block amethystOre = new BlockModOre("amethystOre", "Amethyst Ore").setHarvestLevel(EnumToolType.IRON_PICK); */
 	public static final Block mythrilOre = new BlockModOre("amethystOre", "Amethyst Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block verditeOre = new BlockModOre("verditeOre", "Verdite Ore").setHarvestLevel(EnumToolType.STONE_PICK);
 	public static final Block sapphireOre = new BlockModOre("sapphireOre", "Sapphire Ore").setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block lavaRock = new BlockMod("lavaRock", "Lava Rock").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block shadiumOre = new BlockModOre("shadiumOre", "Shadium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block luniumOre = new BlockModOre("luniumOre", "Lunium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block hellstoneOre = new BlockModOre("hellstoneOre", "Bloodcrust Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block bloodcrustOre = new BlockModOre("bloodcrustOre", "Bloodcrust Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block ashualOre = new BlockModOre("ashualOre", "Ashual Ore");
 	public static final Block blaziumOre = new BlockModOre("blaziumOre", "Blazium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block celestiumOre = new BlockModOre("celestiumOre", "Celestium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
@@ -57,7 +38,7 @@ public class JourneyBlocks {
 	public static final Block sapphireBlock = new BlockModOre("sapphireBlock", "Sapphire Block").setHarvestLevel(EnumToolType.STONE_PICK);
 	public static final Block shadiumBlock = new BlockModOre("shadiumBlock", "Shadium Block").setHarvestLevel(EnumToolType.STONE_PICK);
 	public static final Block luniumBlock = new BlockModOre("luniumBlock", "Lunium Block").setHarvestLevel(EnumToolType.STONE_PICK);
-	public static final Block hellstoneBlock = new BlockModOre("hellstoneBlock", "Hellstone Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block bloodcrustBlock = new BlockModOre("bloodcrustBlock", "Bloodcrust Block").setHarvestLevel(EnumToolType.STONE_PICK);
 	public static final Block ashualBlock = new BlockModOre("ashualBlock", "Ashual Block");
 	public static final Block blaziumBlock = new BlockModOre("blaziumBlock", "Blazium Block").setHarvestLevel(EnumToolType.STONE_PICK);
 	public static final Block celestiumBlock = new BlockModOre("celestiumBlock", "Celestium Block").setHarvestLevel(EnumToolType.STONE_PICK);
@@ -184,7 +165,7 @@ public class JourneyBlocks {
 	public static final BlockModFlower cloudiaTallGrass = new BlockModFlower("cloudiaTallGrass", "Cloudia Tall Grass");
 	public static final BlockModFlower cloudiaFlower = new BlockModFlower("cloudiaFlower", "Cloudia Flower");
 	
-	public static final Block swampLamp = new BlockSwampLamp("swampLamp", "Swamp Fly Bottle", 0).setLightLevel(1);
+	//public static final Block swampLamp = new BlockSwampLamp("swampLamp", "Swamp Fly Bottle", 0).setLightLevel(1);
 
 	public static final Block frozenChest = new BlockJourneyChest("frozenChest", "Frozen Chest");
 	public static final Block netherChest = new BlockJourneyChest("netherChest", "Nether Chest");
@@ -235,40 +216,40 @@ public class JourneyBlocks {
 	public static final Block wastelandsLog = new BlockModLog("wastelandsLog");
 	public static final Block wastelandsBranches = new BlockModLeaves("wastelandsBranches", 2.0F).setStepSound(EnumMaterialTypes.WOOD.getSound());*/
 
-	public static final BlockWitherPortal witherPortal = (BlockWitherPortal)new BlockWitherPortal("witherPortal", "Withanian Portal");
+	//public static final BlockWitherPortal witherPortal = (BlockWitherPortal)new BlockWitherPortal("witherPortal", "Withanian Portal");
 	public static final Block witherPortalFrame = new BlockWitherFrame("witherPortalFrame", "Withanian Portal Frame");
 	
-	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
+	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal", "Euca Portal");
 	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", "Euca Portal Frame", 3.0F);
 	
-	public static final BlockGoldenPortal goldenPortal = (BlockGoldenPortal)new BlockGoldenPortal("goldenPortal");
+	public static final BlockGoldenPortal goldenPortal = (BlockGoldenPortal)new BlockGoldenPortal("goldenPortal", "Golden Portal");
 	public static final Block goldenPortalFrame = new BlockMod("goldenPortalFrame", "Golden Portal Frame", 3.0F);
 	
-	public static final BlockDepthsPortal depthsPortal = (BlockDepthsPortal)new BlockDepthsPortal("depthsPortal");
+	public static final BlockDepthsPortal depthsPortal = (BlockDepthsPortal)new BlockDepthsPortal("depthsPortal", "Depths Portal");
 	public static final Block depthsPortalFrame = new BlockMod("depthsPortalFrame", "Depths Portal Frame", 3.0F);
 	
-	public static final BlockBoilPortal boilPortal = (BlockBoilPortal)new BlockBoilPortal("boilingPortal");
+	public static final BlockBoilPortal boilPortal = (BlockBoilPortal)new BlockBoilPortal("boilingPortal", "Boiling Point Portal");
 	public static final Block boilPortalFrame = new BlockMod("boilingPortalFrame", "Boiling Portal Frame", 3.0F);
 	
-	public static final BlockFrozenPortal frozenPortal = (BlockFrozenPortal)new BlockFrozenPortal("frozenPortal");
+	public static final BlockFrozenPortal frozenPortal = (BlockFrozenPortal)new BlockFrozenPortal("frozenPortal", "Frozen Lands Portal");
 	public static final Block frozenPortalFrame = new BlockMod("frozenPortalFrame", "Frozen Portal Frame", 3.0F);
 	
-	public static final BlockCorbaPortal corbaPortal = (BlockCorbaPortal)new BlockCorbaPortal("corbaPortal", "Corba Portal");
+	//public static final BlockCorbaPortal corbaPortal = (BlockCorbaPortal)new BlockCorbaPortal("corbaPortal", "Corba Portal");
 	public static final Block corbaPortalFrame = new BlockCorbaPortalFrame("corbaPortalFrame", "Corba Portal Frame");
 	
-	public static final BlockTerraniaPortal terraniaPortal = (BlockTerraniaPortal)new BlockTerraniaPortal("terraniaPortal");
+	public static final BlockTerraniaPortal terraniaPortal = (BlockTerraniaPortal)new BlockTerraniaPortal("terraniaPortal", "Terrania Portal");
 	public static final Block terraniaPortalFrame = new BlockMod("terraniaPortalFrame", "Terrania Portal Frame", 3.0F);
 	
-	public static final BlockSenterianPortal senterianPortal = (BlockSenterianPortal)new BlockSenterianPortal(EnumMaterialTypes.METAL_SOUND, "senterianPortal", "senterianPortal", 1000000F, JourneyTabs.portalBlocks).setCreativeTab(null);
-	public static final Block senterianPortalFrame = new BlockSenterianPortalFrame("senterianPortalFrame", "Senterian Portal Frame").setCreativeTab(null);
+	//public static final BlockSenterianPortal senterianPortal = (BlockSenterianPortal)new BlockSenterianPortal(EnumMaterialTypes.METAL_SOUND, "senterianPortal", "senterianPortal", 1000000F, JourneyTabs.portalBlocks).setCreativeTab(null);
+	//public static final Block senterianPortalFrame = new BlockSenterianPortalFrame("senterianPortalFrame", "Senterian Portal Frame").setCreativeTab(null);
 	//public static final BlockWastelandsPortal wastelandsPortal = (BlockWastelandsPortal)new BlockWastelandsPortal("wastelandsPortal");
 	//public static final Block wastelandsPortalFrame = new BlockMod("wastelandsPortalFrame");
-	public static final BlockCloudiaPortal cloudiaPortal = (BlockCloudiaPortal)new BlockCloudiaPortal("cloudiaPortal");
+	public static final BlockCloudiaPortal cloudiaPortal = (BlockCloudiaPortal)new BlockCloudiaPortal("cloudiaPortal", "Cloudia Portal");
 	public static final Block cloudiaPortalFrame = new BlockMod("cloudiaPortalFrame", "Cloudia Portal Frame", 3.0F);
 	
 	public static final Block depthsLights = new BlockMod(EnumMaterialTypes.GLASS, "depthsLight", "Depths Light", 0.5F).setLightLevel(1.0F);
 	
-	public static final Block fire = new BlockModFire("fire", "Essential Fire");
+	public static final Block essenceFire = new BlockModFire("essenceFire", "Essential Fire");
 	
 	public static final Block mossyEssenceStone = new BlockMod("mossyEssenceStone", "Mossy Essence Stone", 2.0F);
 
@@ -425,10 +406,10 @@ public class JourneyBlocks {
 	public static final Block overseerSpawner = new BlockModSpawner("overseerSpawner", "Overseer Spawner", "overseer");
 	public static final Block overseerElderSpawner = new BlockModSpawner("overseerElderSpawner", "Overseer Elder Spawner", "overseerElder");
 	
-	public static final Block elderBlock = new BlockChangeable("elderBlock", "Elder Block", JourneyItems.elderKey, JourneyBlocks.overseerElderSpawner);
+	//public static final Block elderBlock = new BlockChangeable("elderBlock", "Elder Block", JourneyItems.elderKey, JourneyBlocks.overseerElderSpawner);
 	
-	public static final Block netherFurnace = new BlockNetherFurnace("netherFurnace", "Nethic Furnace", false);
-	public static final Block netherFurnaceActive = new BlockNetherFurnace("netherFurnaceActive", "Nethic Furnace", true).setLightLevel(0.7F).setCreativeTab(null);
+	//public static final Block netherFurnace = new BlockNetherFurnace("netherFurnace", "Nethic Furnace", false);
+	//public static final Block netherFurnaceActive = new BlockNetherFurnace("netherFurnaceActive", "Nethic Furnace", true).setLightLevel(0.7F).setCreativeTab(null);
 
 	/**
 	public static final Block boilingFurnace = new BlockNetherFurnace("boilingFurnace", "Boiling Furnace", false);

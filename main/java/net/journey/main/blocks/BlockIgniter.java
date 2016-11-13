@@ -24,7 +24,7 @@ public class BlockIgniter extends BlockMod {
 	}
 	
 	@Override
-    public boolean canConnectRedstone(IBlockAccess world, BlockPos pos, EnumFacing side) {
+	public boolean canConnectRedstone(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing side) {
 		return true;
 	}
 	
@@ -43,7 +43,7 @@ public class BlockIgniter extends BlockMod {
     }
 	
 	@Override
-	public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock) {
+	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn) {
 		if(!worldIn.isRemote) {
 			if(worldIn.isBlockPowered(pos)) {
 				worldIn.setBlockState(pos.up(), Blocks.FIRE.getDefaultState());

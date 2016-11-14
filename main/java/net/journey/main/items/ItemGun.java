@@ -1,4 +1,4 @@
-package net.journey.items;
+package net.journey.main.items;
 
 import java.util.List;
 
@@ -27,7 +27,8 @@ public class ItemGun extends ItemMod {
 		setFull3D();
 	}
 
-	@Override
+	@SuppressWarnings("")
+	/*@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 		if(!world.isRemote && EssenceBar.getProperties(player).useBar(2)) {
 			EnumSounds.playSound(EnumSounds.PLASMA, world, player);
@@ -39,7 +40,7 @@ public class ItemGun extends ItemMod {
 			}
 		}
 		return stack;
-	}
+	}*/
 
 	@Override
 	public void addInformation(ItemStack i, EntityPlayer p, List l) {

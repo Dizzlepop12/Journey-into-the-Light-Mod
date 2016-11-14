@@ -4,11 +4,10 @@ import java.util.Random;
 
 import net.journey.main.JourneyBlocks;
 import net.journey.main.JourneyItems;
-import net.journey.main.client.render.particle.OreParticleFX;
+import net.journey.main.client.render.particles.OreParticleFX;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.relauncher.Side;

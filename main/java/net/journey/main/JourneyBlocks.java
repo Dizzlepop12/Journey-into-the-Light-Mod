@@ -3,6 +3,9 @@ package net.journey.main;
 import java.util.ArrayList;
 
 import net.journey.main.blocks.*;
+import net.journey.main.blocks.machines.BlockJourneyChest;
+import net.journey.main.blocks.machines.BlockKnowledgeTable;
+import net.journey.main.blocks.machines.BlockSummoningTable;
 import net.journey.main.blocks.portals.*;
 import net.journey.main.blocks.container.*;
 import net.minecraft.block.*;
@@ -34,7 +37,6 @@ public class JourneyBlocks {
 	public static final Block luniteOre = new BlockModOre("luniteOre", "Lunite Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block firestoneOre = new BlockModOre("firestoneOre", "Firestone Ores").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 
-	/* Ore Blocks */
 	public static final Block sapphireBlock = new BlockModOre("sapphireBlock", "Sapphire Block").setHarvestLevel(EnumToolType.STONE_PICK);
 	public static final Block shadiumBlock = new BlockModOre("shadiumBlock", "Shadium Block").setHarvestLevel(EnumToolType.STONE_PICK);
 	public static final Block luniumBlock = new BlockModOre("luniumBlock", "Lunium Block").setHarvestLevel(EnumToolType.STONE_PICK);
@@ -241,7 +243,7 @@ public class JourneyBlocks {
 	public static final Block terraniaPortalFrame = new BlockMod("terraniaPortalFrame", "Terrania Portal Frame", 3.0F);
 	
 	//public static final BlockSenterianPortal senterianPortal = (BlockSenterianPortal)new BlockSenterianPortal(EnumMaterialTypes.METAL_SOUND, "senterianPortal", "senterianPortal", 1000000F, JourneyTabs.portalBlocks).setCreativeTab(null);
-	//public static final Block senterianPortalFrame = new BlockSenterianPortalFrame("senterianPortalFrame", "Senterian Portal Frame").setCreativeTab(null);
+	public static final Block senterianPortalFrame = new BlockSenterianPortalFrame("senterianPortalFrame", "Senterian Portal Frame").setCreativeTab(null);
 	//public static final BlockWastelandsPortal wastelandsPortal = (BlockWastelandsPortal)new BlockWastelandsPortal("wastelandsPortal");
 	//public static final Block wastelandsPortalFrame = new BlockMod("wastelandsPortalFrame");
 	public static final BlockCloudiaPortal cloudiaPortal = (BlockCloudiaPortal)new BlockCloudiaPortal("cloudiaPortal", "Cloudia Portal");
@@ -274,7 +276,7 @@ public class JourneyBlocks {
 	public static final Block dungeonLampFence = new BlockModFence(dungeonLamp, "dungeonLampFence", "Dungeon Lamp Fence", true);
 	
 	public static final Block terraniaLeaves = new BlockModLeaves("terranianLeaves", "Terrania Leaves", 1.0F);
-	public static final Block terraniaVine = new BlockModVine("terranianVine", "Terrania Vine", 12);
+	public static final Block terraniaVine = new BlockModVine("terranianVine", "Terrania Vine");
 	public static final BlockMod terranianDirt = new BlockMod(EnumMaterialTypes.DIRT, "terranianDirt", "Terranian Dirt", 2.0F);
 	public static final Block terranianLog = new BlockModLog("terranianLog", "Terranian Log");
 	public static final Block terranianGrass = new BlockModGrass(terranianDirt, "terranianGrass", "Terranian Grass", 2.0F);
@@ -375,7 +377,7 @@ public class JourneyBlocks {
 	public static final Block eucaPumpkin = new BlockEucaPumpkin("eucaPumpkin", "Euca Pumpkin");
 	public static final Block cloud = new BlockCloud("cloud", "Cloud");
 	
-	public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder", 0);
+	public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder", 0F);
 	public static final Block largeNetherBrick = new BlockMod("largeNetherBrick", "Large Nether Brick");
 	public static final Block compactNetherBrick = new BlockMod("compactNetherBrick", "Compact Nether Brick").setBlockUnbreakable().setResistance(10000000.0F);
 	public static final Block nethicLamp = new BlockMod(EnumMaterialTypes.GLASS, "nethicLamp", "Nethic Lamp", 0.1F).setLightLevel(1).setCreativeTab(JourneyTabs.decoration);

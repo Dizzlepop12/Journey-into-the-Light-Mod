@@ -9,7 +9,9 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.slayerapi.base.SlayerAPI;
@@ -24,19 +26,19 @@ public class ItemFlameCoin extends ItemMod {
 	}
 
 	@Override
-	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer p, World w, BlockPos pos, EnumFacing fa, float par8, float par9, float par10) {
+	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World w, BlockPos pos, EnumHand hand, EnumFacing fa, float hitX, float hitY, float hitZ) {
 		Random r = new Random();
 		int x = pos.getX(), y = pos.getY(), z = pos.getZ();
-		if(fa != EnumFacing.UP && w.getBlockState(pos.up()).getBlock() != Blocks.air){
-			return false;
+		if(fa != EnumFacing.UP && w.getBlockState(pos.up()).getBlock() != Blocks.AIR){
+			return EnumActionResult.FAIL;
 		} else {
 			Block block = w.getBlockState(pos).getBlock();
 			if(block == JourneyBlocks.frozenPortalFrame ||block == JourneyBlocks.eucaPortalFrame || block == JourneyBlocks.depthsPortalFrame || block == JourneyBlocks.boilPortalFrame 
 					 || block == JourneyBlocks.cloudiaPortalFrame || block == JourneyBlocks.terraniaPortalFrame || block == JourneyBlocks.goldenPortalFrame){
 				w.setBlockState(new BlockPos(pos.up()), JourneyBlocks.essenceFire.getDefaultState(), 2);
-				return true;
+				return EnumActionResult.PASS;
 			}
-			else return false;
+			else return EnumActionResult.FAIL;
 		}
 		//BARN
 		/*WorldGenAPI.addRectangle(7, 5, 1, w, x, y, z, EssenceBlocks.greenCorbaPlank);
@@ -72,6 +74,7 @@ public class ItemFlameCoin extends ItemMod {
 
 		//return true;
 	}
+
 
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {

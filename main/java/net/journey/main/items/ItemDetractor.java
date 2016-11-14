@@ -8,6 +8,8 @@ import net.journey.main.enums.EnumSounds;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 import net.slayerapi.base.SlayerAPI;
 import net.slayerapi.item.ItemMod;
@@ -27,7 +29,13 @@ public class ItemDetractor extends ItemMod {
 		this.setFull3D();
 	}
 
+	@SuppressWarnings("")
 	@Override
+	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World worldIn, EntityPlayer player, EnumHand hand) {
+		return super.onItemRightClick(stack, worldIn, player, hand);
+	}
+	
+	/*@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 		Random r = new Random();
 		if (detracts) {
@@ -45,7 +53,7 @@ public class ItemDetractor extends ItemMod {
 			}
 		}
 		return stack;
-	}
+	}*/
 
 	@Override
 	public void addInformation(ItemStack i, EntityPlayer p, List l) {

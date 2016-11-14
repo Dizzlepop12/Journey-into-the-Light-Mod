@@ -1,4 +1,4 @@
-package net.journey.main.blocks.container;
+package net.journey.main.blocks.machines;
 
 import java.util.Iterator;
 
@@ -63,16 +63,12 @@ public class BlockJourneyChest extends BlockModContainer {
 	}
 	
 	@Override
-    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
-    {
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
         TileEntity tileentity = worldIn.getTileEntity(pos);
-
-        if (tileentity instanceof IInventory)
-        {
+        if (tileentity instanceof IInventory) {
             InventoryHelper.dropInventoryItems(worldIn, pos, (IInventory)tileentity);
             worldIn.updateComparatorOutputLevel(pos, this);
         }
-
         super.breakBlock(worldIn, pos, state);
     }
 
@@ -90,8 +86,7 @@ public class BlockJourneyChest extends BlockModContainer {
         }
     }
 
-    public ILockableContainer getLockableContainer(World worldIn, BlockPos pos)
-    {
+    public ILockableContainer getLockableContainer(World worldIn, BlockPos pos) {
         TileEntity tileentity = worldIn.getTileEntity(pos);
 
         if (!(tileentity instanceof TileEntityJourneyChest))

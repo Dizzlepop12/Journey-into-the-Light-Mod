@@ -1,4 +1,4 @@
-package net.journey.main.client.render.particle;
+package net.journey.main.client.render.particles;
 
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.VertexBuffer;

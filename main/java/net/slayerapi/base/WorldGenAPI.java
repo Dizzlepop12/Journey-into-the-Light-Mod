@@ -3,7 +3,7 @@ package net.slayerapi.base;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.journey.main.JourneyBlocks;
+import net.journey.JourneyBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;

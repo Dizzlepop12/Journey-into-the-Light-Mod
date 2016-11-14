@@ -2,9 +2,9 @@ package net.slayerapi.item;
 
 import java.util.List;
 
-import net.journey.main.JourneyItems;
-import net.journey.main.JourneyTabs;
-import net.journey.main.util.EssenceToolMaterial;
+import net.journey.JourneyItems;
+import net.journey.JourneyTabs;
+import net.journey.util.EssenceToolMaterial;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;

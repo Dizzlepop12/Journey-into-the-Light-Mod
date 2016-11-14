@@ -2,7 +2,7 @@ package net.slayerapi.item;
 
 import java.util.List;
 
-import net.journey.main.JourneyTabs;
+import net.journey.JourneyTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;

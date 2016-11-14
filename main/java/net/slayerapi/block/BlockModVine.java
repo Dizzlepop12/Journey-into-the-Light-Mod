@@ -4,8 +4,8 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import net.journey.main.JourneyBlocks;
-import net.journey.main.JourneyTabs;
+import net.journey.JourneyBlocks;
+import net.journey.JourneyTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;

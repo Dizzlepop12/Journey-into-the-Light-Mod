@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import net.journey.main.util.EnumArmor;
+import net.journey.util.EnumArmor;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.slayerapi.item.ItemModArmor;
 

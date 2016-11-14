@@ -3,8 +3,8 @@ package net.slayerapi.base;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
-import net.journey.main.Journey;
-import net.journey.main.util.Config;
+import net.journey.Journey;
+import net.journey.util.Config;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemModelMesher;

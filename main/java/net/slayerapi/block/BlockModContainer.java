@@ -1,6 +1,6 @@
 package net.slayerapi.block;
 
-import net.journey.main.JourneyTabs;
+import net.journey.JourneyTabs;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

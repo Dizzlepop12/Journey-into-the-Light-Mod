@@ -1,7 +1,7 @@
 package net.slayerapi.item;
 
-import net.journey.main.JourneyItems;
-import net.journey.main.JourneyTabs;
+import net.journey.JourneyItems;
+import net.journey.JourneyTabs;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemSeeds;

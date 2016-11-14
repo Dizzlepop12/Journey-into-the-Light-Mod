@@ -3,9 +3,9 @@ package net.slayerapi.item;
 import java.util.List;
 import java.util.Set;
 
-import net.journey.main.JourneyItems;
-import net.journey.main.JourneyTabs;
-import net.journey.main.util.EssenceToolMaterial;
+import net.journey.JourneyItems;
+import net.journey.JourneyTabs;
+import net.journey.util.EssenceToolMaterial;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.material.Material;

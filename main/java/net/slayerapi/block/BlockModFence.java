@@ -1,7 +1,7 @@
 package net.slayerapi.block;
 
-import net.journey.main.JourneyBlocks;
-import net.journey.main.JourneyTabs;
+import net.journey.JourneyBlocks;
+import net.journey.JourneyTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockFenceGate;

@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import net.journey.main.JourneyTabs;
-import net.journey.main.util.LangHelper;
+import net.journey.JourneyTabs;
+import net.journey.util.LangHelper;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;

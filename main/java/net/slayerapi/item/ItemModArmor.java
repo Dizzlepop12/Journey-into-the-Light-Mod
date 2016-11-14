@@ -2,10 +2,10 @@ package net.slayerapi.item;
 
 import java.util.List;
 
-import net.journey.main.JourneyItems;
-import net.journey.main.JourneyTabs;
-import net.journey.main.util.ArmorDescription;
-import net.journey.main.util.EnumArmor;
+import net.journey.JourneyItems;
+import net.journey.JourneyTabs;
+import net.journey.util.ArmorDescription;
+import net.journey.util.EnumArmor;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;

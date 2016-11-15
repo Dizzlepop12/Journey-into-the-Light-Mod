@@ -18,6 +18,6 @@ public class EssenceStorage implements Capability.IStorage<IEssenceBar>{
 
 	@Override
 	public void readNBT(Capability<IEssenceBar> capability, IEssenceBar instance, EnumFacing side, NBTBase nbt) {
-
+		
 	}
 }

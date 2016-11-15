@@ -9,15 +9,13 @@ import net.minecraft.item.ItemStack;
 import net.slayerapi.base.SlayerAPI;
 import net.slayerapi.item.ItemMod;
 
-public class ItemGun extends ItemMod {
+public class ItemChaosCannon extends ItemMod {
 
 	public int damage;
-	protected Class<? extends EntityBasicProjectile> projectile; 
 	public String ability;
-	public ItemGun(String name, String f, int damage, String ability, Class<? extends EntityBasicProjectile> projectile) {
+	public ItemChaosCannon(String name, String f, int damage, int i, String ability) {
 		super(name, f, JourneyTabs.staves);
 		this.ability = ability;
-		this.projectile = projectile;
 		this.damage = damage;
 		setMaxStackSize(1);
 		setMaxDamage(500);

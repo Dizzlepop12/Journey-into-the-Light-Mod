@@ -3,8 +3,10 @@ package net.journey.items;
 import java.util.List;
 
 import net.journey.JourneyTabs;
-import net.journey.enums.EnumSounds;
-import net.journey.items.entity.projectile.EntityBasicProjectile;
+import net.journey.client.server.bars.BarTickHandler;
+import net.journey.client.server.bars.EssenceBar;
+import net.journey.client.server.bars.IEssenceBar;
+import net.journey.entity.projectile.EntityBasicProjectile;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -38,9 +40,10 @@ public class ItemStaff extends ItemMod {
 
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
+		IEssenceBar bar1 = BarTickHandler.ESSENCE_CAP.getDefaultInstance();
 		if(essence) {
-			/*if(!world.isRemote && EssenceBar.getProperties(player).useBar(usage)) {
-				EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
+			if(!world.isRemote && bar1.useBar(usage)) {
+				//EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
 				if(!unBreakable) stack.damageItem(1, player);
 				try {
 					world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
@@ -48,7 +51,7 @@ public class ItemStaff extends ItemMod {
 					e.printStackTrace();
 				}
 			}
-		} else {
+		} /*else {
 			if(!world.isRemote && DarkEnergyBar.getProperties(player).useBar(usage)) {
 				EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
 				if(!unBreakable) stack.damageItem(1, player);
@@ -57,8 +60,8 @@ public class ItemStaff extends ItemMod {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}*/
-		}
+			}
+		}*/
 		return super.onItemRightClick(stack, world, player, hand);
 	}
 

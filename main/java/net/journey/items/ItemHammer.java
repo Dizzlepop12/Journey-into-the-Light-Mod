@@ -4,15 +4,12 @@ import java.util.List;
 
 import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
-import net.journey.enums.EnumSounds;
-import net.journey.items.entity.projectile.EntityBasicProjectile;
+import net.journey.entity.projectile.EntityBasicProjectile;
 import net.journey.util.EssenceToolMaterial;
 import net.journey.util.LangHelper;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

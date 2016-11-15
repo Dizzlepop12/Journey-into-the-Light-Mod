@@ -22,6 +22,7 @@ import net.journey.entity.projectile.EntityFrostyPiercer;
 import net.journey.entity.projectile.EntityFrozenArrow;
 import net.journey.entity.projectile.EntityFrozenPiercer;
 import net.journey.entity.projectile.EntityGreenpace;
+import net.journey.entity.projectile.EntityHellstone;
 import net.journey.entity.projectile.EntityIceBall;
 import net.journey.entity.projectile.EntityLightningBall;
 import net.journey.entity.projectile.EntityNetherPlasma;
@@ -32,8 +33,10 @@ import net.journey.entity.projectile.EntityRock;
 import net.journey.entity.projectile.EntityWithic;
 import net.journey.entity.projectile.EntityWizardsStar;
 import net.journey.enums.EnumKnowledge;
+import net.journey.items.ItemChaosCannon;
 import net.journey.items.ItemDemonicEye;
 import net.journey.items.ItemDetractor;
+import net.journey.items.ItemEssencePotion;
 import net.journey.items.ItemFlameCoin;
 import net.journey.items.ItemGoldenFood;
 import net.journey.items.ItemGun;
@@ -41,11 +44,14 @@ import net.journey.items.ItemHammer;
 import net.journey.items.ItemHealth;
 import net.journey.items.ItemHonglow;
 import net.journey.items.ItemKnowledge;
+import net.journey.items.ItemNetherBossSpawner;
 import net.journey.items.ItemPiercer;
+import net.journey.items.ItemPresent;
 import net.journey.items.ItemSentryEye;
 import net.journey.items.ItemSoul;
 import net.journey.items.ItemSpecificDimensionSpawner;
 import net.journey.items.ItemStaff;
+import net.journey.items.ItemTeleport;
 import net.journey.items.swords.ItemBubbleSword;
 import net.journey.items.swords.ItemFireHealthSword;
 import net.journey.items.swords.ItemFireSword;
@@ -583,7 +589,7 @@ public class JourneyItems {
 
 	public static final Item staffOfCrystal = new ItemStaff("staffOfCrystal", "Staff of Crystal", false, 3, 1000, 10, false, EntityIceBall.class);
 	public static final Item staffOfDivineStone = new ItemStaff("staffOfDivineStone", "Staff of Divine Stone", false, 3, 1000, 9, false, EntityRock.class);
-	public static final Item staffOfBloodcrust = new ItemStaff("staffOfBloodcrust", "Staff of Bloodcrust", false, 3, 1000, 7, false, EntityBloodcrust.class);
+	public static final Item staffOfBloodcrust = new ItemStaff("staffOfBloodcrust", "Staff of Bloodcrust", false, 3, 1000, 7, false, EntityHellstone.class);
 	public static final Item doomsBringer = new ItemStaff("doomsBringer", "Dooms Bringer", false, 3, 1000, 12, false, EntityDoomsBringer.class);
 	public static final Item conjuringStaff = new ItemStaff("conjuringStaff", "Conjuring Staff", false, 3, 1000, 18, false, EntityConjuring.class);
 	public static final Item staffOfEnlightenment = new ItemStaff("staffOfEnlightenment", "Staff Of Enlightenment", true, 3, 1000, 14, false, EntityEnlightenment.class);
@@ -648,11 +654,11 @@ public class JourneyItems {
 
 	//public static final Item backpack = new ItemBackpack("backpack");
 
-	public static final Item fireWand = new ItemWand("fireWand", "Fire Wand", false, 5, 600, 8, false, EntityFireBall.class);
-	public static final Item iceWand = new ItemWand("iceWand", "Ice Wand", true, 5, 600, 8, false, EntityIceBall.class);
-	public static final Item lightningWand = new ItemWand("lightningWand", "Lightning Wand", false, 10, 600, 8, false, EntityLightningBall.class);
+	//public static final Item fireWand = new ItemWand("fireWand", "Fire Wand", false, 5, 600, 8, false, EntityFireBall.class);
+	//public static final Item iceWand = new ItemWand("iceWand", "Ice Wand", true, 5, 600, 8, false, EntityIceBall.class);
+	//public static final Item lightningWand = new ItemWand("lightningWand", "Lightning Wand", false, 10, 600, 8, false, EntityLightningBall.class);
 	
-	public static final Item hammerCreative = new ItemCreativeHammer("hammerCreative", "Hammer of Creative Spellbinding", EssenceToolMaterial.CREATIVE, false, EntityLightningBall.class);
+	public static final Item hammerCreative = new ItemHammer("hammerCreative", "Hammer of Creative Spellbinding", EssenceToolMaterial.CREATIVE, false, EntityLightningBall.class, false, false, 1000, 0, 1000);
 	public static final Item earthenHammer = new ItemHammer("earthenHammer", "Earthen Hammer", EssenceToolMaterial.EARTHEN_HAMMER, false, EntityEarthen.class, false, true, 4, 4, 642);
 	public static final Item flamingHammer = new ItemHammer("flamingHammer", "Flaming Hammer", EssenceToolMaterial.FLAMING_HAMMER, false, EntityFireBall.class, false, true, 10, 4, 1230);
 	public static final Item nethicHammer = new ItemHammer("nethicHammer", "Nethic Hammer", EssenceToolMaterial.NETHIC_HAMMER, false, EntityFireBall.class, false, true, 8, 4, 825);
@@ -675,7 +681,7 @@ public class JourneyItems {
 	public static final Item yellowGem = new ItemMod("yellowGem", "Yellow Gem");
 
 	public static final Item eucaTablet = new ItemMod("eucaTablet", "Euca Tablet");
-	public static final Item pocketCrafting = new ItemCrafting("pocketCrafting", "Sizzling Crafting Pack", 0);
+	//public static final Item pocketCrafting = new ItemCrafting("pocketCrafting", "Sizzling Crafting Pack", 0);
 	
 	public static final Item wandBase = new ItemMod("wandBase", "Wand Base");
 	public static final Item staffBase = new ItemMod("staffBase", "Staff Base");
@@ -696,19 +702,19 @@ public class JourneyItems {
 	public static final Item glowshroom = new ItemModFood("glowshroom", "Glowshroom", 4, 0.6F, 10, false).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 10, 1), 1.0F).setAlwaysEdible();
 	public static final Item terrashroom = new ItemModFood("terrashroom", "Terrashroom", 8, 0.6F, 10, false).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 10, 1), 1.0F).setAlwaysEdible();
 	public static final Item corveggies = new ItemModFood("corveggies", "Corveggies", 4, 0.6F, 10, false).setPotionEffect(new PotionEffect(MobEffects.SATURATION, 20, 1), 1.0F).setAlwaysEdible();
-	public static final Item crackenCanes = new ItemCrackenCanes("crackenCanes", "Kracken Canes", 4, 3.0F, false, false).setPotionEffect(new PotionEffect(MobEffects.STRENGTH, 20, 1), 1.0F).setAlwaysEdible();
-	public static final Item crakeBulb = new ItemCrakeBulb("crakeBulb", "Crake Bulb", 4, 3.0F, false, false).setPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 20, 1), 1.0F).setAlwaysEdible();
-	public static final Item spineberries = new ItemSpineberries("spineBerries", "Spine Berries", 4, 3.0F, false, false).setPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 20, 1), 1.0F).setAlwaysEdible();
-	public static final Item zatPedal = new ItemZatPedal("zatPedal", "Zat Pedal", 4, 3.0F, false, false).setPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 20, 1), 1.0F).setAlwaysEdible();
-	public static final Item glowa = new ItemGlowa("glowa", "Glowa", 4, 3.0F, false, false).setPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 5, 1), 1.0F).setAlwaysEdible();
-	public static final Item mintCandyCane = new ItemCandyCane("mintCandyCane", "Mint Candy Cane", 3, 1.6F, false, false).setPotionEffect(new PotionEffect(MobEffects.HASTE, 10, 1), 1.0F).setAlwaysEdible();
-	public static final Item fruityCandyCane = new ItemCandyCane("fruityCandyCane", "Fruity Candy Cane", 3, 1.6F, false, false).setPotionEffect(new PotionEffect(MobEffects.STRENGTH, 10, 1), 1.0F).setAlwaysEdible();
-	public static final Item cherryCandyCane = new ItemCandyCane("cherryCandyCane", "Cherry Candy Cane", 3, 1.6F, false, false).setPotionEffect(new PotionEffect(MobEffects.REGENERATION, 10, 1), 1.0F).setAlwaysEdible();
+	//public static final Item crackenCanes = new ItemCrackenCanes("crackenCanes", "Kracken Canes", 4, 3.0F, false, false).setPotionEffect(new PotionEffect(MobEffects.STRENGTH, 20, 1), 1.0F).setAlwaysEdible();
+	//public static final Item crakeBulb = new ItemCrakeBulb("crakeBulb", "Crake Bulb", 4, 3.0F, false, false).setPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 20, 1), 1.0F).setAlwaysEdible();
+	//public static final Item spineberries = new ItemSpineberries("spineBerries", "Spine Berries", 4, 3.0F, false, false).setPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 20, 1), 1.0F).setAlwaysEdible();
+	//public static final Item zatPedal = new ItemZatPedal("zatPedal", "Zat Pedal", 4, 3.0F, false, false).setPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 20, 1), 1.0F).setAlwaysEdible();
+	//public static final Item glowa = new ItemGlowa("glowa", "Glowa", 4, 3.0F, false, false).setPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 5, 1), 1.0F).setAlwaysEdible();
+	//public static final Item mintCandyCane = new ItemCandyCane("mintCandyCane", "Mint Candy Cane", 3, 1.6F, false, false).setPotionEffect(new PotionEffect(MobEffects.HASTE, 10, 1), 1.0F).setAlwaysEdible();
+	//public static final Item fruityCandyCane = new ItemCandyCane("fruityCandyCane", "Fruity Candy Cane", 3, 1.6F, false, false).setPotionEffect(new PotionEffect(MobEffects.STRENGTH, 10, 1), 1.0F).setAlwaysEdible();
+	//public static final Item cherryCandyCane = new ItemCandyCane("cherryCandyCane", "Cherry Candy Cane", 3, 1.6F, false, false).setPotionEffect(new PotionEffect(MobEffects.REGENERATION, 10, 1), 1.0F).setAlwaysEdible();
 	public static final Item peppermint = new ItemModFood("peppermint", "Peppermint", 1, 0.1F, 2, false);
 	public static final Item jellyBeans = new ItemModFood("jellyBeans", "Jelly Beans", 1, 0.1F, 2, false);
 	public static final Item chocolate = new ItemModFood("chocolate", "Chocolate Bar", 2, 0.1F, 2, false);
 	public static final Item vanillaWafer = new ItemModFood("vanillaWafer", "Vanilla Wafer", 1, 0.1F, 2, false);
-	public static final Item bleedheart = new ItemBleedheart("bleedheart", "Bleedheart Fruit", 2, 0.1F, false);
+	//public static final Item bleedheart = new ItemBleedheart("bleedheart", "Bleedheart Fruit", 2, 0.1F, false);
 	
 	public static final Item sizzleberry = new ItemModFood("sizzleberry", "Sizzleberry", 1, 4.0F, 5, false).setPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 20, 1), 1.0F).setAlwaysEdible();
 	public static final Item bradberry = new ItemModFood("bradberry", "Bradberry", 1, 8, 4, false);
@@ -748,7 +754,7 @@ public class JourneyItems {
 	public static final Item redHonglowShroom = new ItemHonglow("redHonglowShroom", "Red Honglowshroom", 2, 1.2F, false, false).setPotionEffect(new PotionEffect(MobEffects.REGENERATION, 10, 1), 1.0F).setAlwaysEdible();
 	public static final Item blueHonglowShroom = new ItemHonglow("blueHonglowShroom", "Blue Honglowshroom", 2, 1.2F, false, false).setPotionEffect(new PotionEffect(MobEffects.SPEED, 10, 1), 1.0F).setAlwaysEdible();
 	public static final Item honglowShroom = new ItemHonglow("honglowShroom", "Honglowshroom", 6, 1.2F, false, false).setAlwaysEdible();
-	public static final Item snakeFlesh = new ItemZatPedal("snakeFlesh", "Snake Flesh", 6, 1.2F, false, true).setPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 60, 1), 1.0F).setAlwaysEdible();
+	//public static final Item snakeFlesh = new ItemZatPedal("snakeFlesh", "Snake Flesh", 6, 1.2F, false, true).setPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 60, 1), 1.0F).setAlwaysEdible();
 	public static final Item flamingBeef = new ItemModFood("flamingBeef", "Raw Flaming Beef", 6, 1.2F, true).setPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 90, 1), 1.0F).setAlwaysEdible();
 	public static final Item flamingBeefCooked = new ItemModFood("flamingBeefCooked", "Cooked Flaming Beef", 16, 1.2F, true).setPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 100, 2), 2.0F).setAlwaysEdible();
 
@@ -788,8 +794,8 @@ public class JourneyItems {
 	//public static final ItemMod blazesEssence = new ItemMod("blazesEssence");
 	
 	//TODO
-	public static final Item demonicBomb = new ItemThrowable("demonicBomb", "Demonic Bomb", 8F, EntityDemonicBomb.class);
-	public static final Item fireBomb = new ItemThrowable("fireBomb", "Fire Bomb", 12F, EntityFireBomb.class);
+	//public static final Item demonicBomb = new ItemThrowable("demonicBomb", "Demonic Bomb", 8F, EntityDemonicBomb.class);
+	//public static final Item fireBomb = new ItemThrowable("fireBomb", "Fire Bomb", 12F, EntityFireBomb.class);
 	
 	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", "Boiling Piercer", 12F, 6, EntityBoilingPiercer.class);
 	public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", "Nethic Piercer", 11F, 6, EntityNethicPiercer.class);

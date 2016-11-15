@@ -106,7 +106,7 @@ public enum EnumSounds {
 	}
 	
 	public void addSounds(String s) {
-		sounds.add(s);
+		//sounds.add(s);
 	}
 
 	public String getPrefixedName() {

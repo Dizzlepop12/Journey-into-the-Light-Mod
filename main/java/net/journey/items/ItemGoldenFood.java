@@ -22,8 +22,6 @@ public class ItemGoldenFood extends ItemModFood {
         super(name, actual, heal, sat, wolf);
         op = isOP;
         setUnlocalizedName(name);
-        GameRegistry.registerItem(this, name);
-        JourneyItems.itemNames.add(name);
         setCreativeTab(JourneyTabs.crops);
         this.setAlwaysEdible();
     }

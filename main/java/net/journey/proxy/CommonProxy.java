@@ -1,15 +1,20 @@
 package net.journey.proxy;
 
+import java.beans.EventHandler;
+
+import net.journey.JourneyTabs;
+import net.journey.client.server.bars.BarTickHandler;
+import net.journey.client.server.bars.EssenceBar;
+import net.journey.client.server.bars.EssenceStorage;
+import net.journey.client.server.bars.IEssenceBar;
 import net.journey.enums.EnumSounds;
 import net.journey.util.Config;
-import net.minecraft.entity.EnumCreatureType;
-import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.common.BiomeDictionary.Type;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.slayerapi.base.LangRegistry;
 import net.slayerapi.base.SlayerAPI;
 
@@ -23,7 +28,10 @@ public class CommonProxy {
 	
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.init(event);
+		JourneyTabs.init();
 		EnumSounds.init();
+		CapabilityManager.INSTANCE.register(IEssenceBar.class, new EssenceStorage(), EssenceBar.class);
+        MinecraftForge.EVENT_BUS.register(new BarTickHandler());
 		if(SlayerAPI.DEVMODE) LangRegistry.instance.register();
 	}
 	

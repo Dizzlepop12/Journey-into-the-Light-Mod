@@ -60,8 +60,8 @@ public class JourneyBlocks {
 	public static final Block sizzlerWoodLog = new BlockModLog("sizzlerWoodLog", "Deadblood Bark");
 	public static final BlockModFlower deathGrass = new BlockModFlower("deathGrass", "Death Grass", true);
 	public static final BlockModFlower hellBell = new BlockModFlower("hellBell", "Hell Bell", true);
-	public static final Block hellshroom = new BlockNetherPlant("hellshroom", "Hellshroom");
-	public static final Block bleedheartFruit = new BlockFruitCrop("bleedheartFruit", "Bleedheart Fruit");
+	//public static final Block hellshroom = new BlockNetherPlant("hellshroom", "Hellshroom");
+	//public static final Block bleedheartFruit = new BlockFruitCrop("bleedheartFruit", "Bleedheart Fruit");
 	public static final Block heatSoil = new BlockMod(EnumMaterialTypes.DIRT, "heatSoil", "Nethic Soil", 2.0F);
 
 	public static final Block redBirchLeaves = new BlockModLeaves("redBirchLeaves", "Red Birch Leaves", 1.0F);
@@ -88,7 +88,7 @@ public class JourneyBlocks {
 	public static final Block eucaGoldStairs = new BlockModStairs(eucaGoldLog, "eucaGoldStairs", "Golden Euca Stairs");
 	public static final Block eucaGoldLeaves = new BlockModLeaves("eucaGoldLeaves", "Golden Euca Leaves", 1.0F);
 	public static final Block eucaSilverLeaves = new BlockModLeaves("eucaSilverLeaves", "Silver Euca Leaves", 1.0F);
-	public static final Block eucaSapling = new BlockEucaSapling("eucaSapling", "Euca Sapling");
+	//public static final Block eucaSapling = new BlockEucaSapling("eucaSapling", "Euca Sapling");
 	public static final Block eucaBricks = new BlockMod("eucaBricks", "Euca Bricks", 2.0F);
 	public static final Block eucaTile = new BlockMod("eucaTile", "Euca Tile", 2.0F);
 	
@@ -285,7 +285,7 @@ public class JourneyBlocks {
 	public static final Block terranianDarkPanels = new BlockMod("terranianDarkPanels", "Terranian Dark Panels", 2.0F);
 	public static final Block terranianPanels = new BlockMod("terranianPanels", "Terranian Panels", 2.0F);
 	public static final BlockModFlower terranianTallgrass = new BlockModFlower("terranianTallgrass", "Terranian Tallgrass");
-	public static final Block terragrow = new BlockTerraFlower("terragrow", "Terranian Flower");
+	//public static final Block terragrow = new BlockTerraFlower("terragrow", "Terranian Flower");
 	public static final Block terraniaLamp = new BlockMod(EnumMaterialTypes.GLASS, "terraniaLamp", "Terrania Lamp", 0.1F).setLightLevel(1.0F).setCreativeTab(JourneyTabs.decoration);
 	
 	public static final Block hotBrick = new BlockMod("hotBrick", "Hot Brick", 2.0F);
@@ -304,26 +304,26 @@ public class JourneyBlocks {
 	//public static final Block enderChampionStatue = new BlockStatue("enderChampionStatue", new ModelEnderChampionStatue());
 	//public static final Block wraithStatue = new BlockStatue("wraithStatue", new ModelWraithStatue());
 	
-	public static final Block darkbloomTop = new BlockDarkbloom("darkbloomTop", "Darkbloom", true);
-	public static final Block darkbloomBottom = new BlockDarkbloom("darkbloomBottom", "Darkbloom", false);
+	//public static final Block darkbloomTop = new BlockDarkbloom("darkbloomTop", "Darkbloom", true);
+	//public static final Block darkbloomBottom = new BlockDarkbloom("darkbloomBottom", "Darkbloom", false);
 	
 	//public static final Block colouredBricks = new BlockColouredBricks();
 	//public static final Block miniColouredBricks = new BlockMiniColouredBricks();
-	public static final Block redGlowshroomTop = new BlockGlowshroom("redGlowshroomTop", "Red Glowshroom", true);
-	public static final Block redGlowshroomBottom = new BlockGlowshroom("redGlowshroomBottom", "Red Glowshroom", false);
+	//public static final Block redGlowshroomTop = new BlockGlowshroom("redGlowshroomTop", "Red Glowshroom", true);
+	//public static final Block redGlowshroomBottom = new BlockGlowshroom("redGlowshroomBottom", "Red Glowshroom", false);
 	
-	public static final Block hellThornTop = new BlockHellThorn("hellThornTop", "Hell Thorn", true);
-	public static final Block hellThornBottom = new BlockHellThorn("hellThornBottom", "Hell Thorn", false);
-	public static final Block hellThornRoot = new BlockRoot("hellThornRoot", "HellThornRoot");
+	//public static final Block hellThornTop = new BlockHellThorn("hellThornTop", "Hell Thorn", true);
+	//public static final Block hellThornBottom = new BlockHellThorn("hellThornBottom", "Hell Thorn", false);
+	//public static final Block hellThornRoot = new BlockRoot("hellThornRoot", "HellThornRoot");
 	public static final Block nethicGrass = new BlockModGrass(null, "nethicGrass", "Nethic Grass", 2.0F);
 	
-	public static final Block greenGlowshroomTop = new BlockGlowshroom("greenGlowshroomTop", "Green Glowshroom", true);
-	public static final Block greenGlowshroomBottom = new BlockGlowshroom("greenGlowshroomBottom", "Green Glowshroom", false);
-	public static final Block blueGlowshroomTop = new BlockGlowshroom("blueGlowshroomTop", "Blue Glowshroom", true);
-	public static final Block blueGlowshroomBottom = new BlockGlowshroom("blueGlowshroomBottom", "Blue Glowshroom", false);
+	//public static final Block greenGlowshroomTop = new BlockGlowshroom("greenGlowshroomTop", "Green Glowshroom", true);
+	//public static final Block greenGlowshroomBottom = new BlockGlowshroom("greenGlowshroomBottom", "Green Glowshroom", false);
+	//public static final Block blueGlowshroomTop = new BlockGlowshroom("blueGlowshroomTop", "Blue Glowshroom", true);
+	//public static final Block blueGlowshroomBottom = new BlockGlowshroom("blueGlowshroomBottom", "Blue Glowshroom", false);
 	
-	public static final Block goldenStalksTop = new BlockStalks("goldenStalksTop", "Golden Stalks", true).setCreativeTab(null);
-	public static final Block goldenStalksBottom = new BlockStalks("goldenStalksBottom", "Golden Stalks", false).setCreativeTab(null);
+	//public static final Block goldenStalksTop = new BlockStalks("goldenStalksTop", "Golden Stalks", true).setCreativeTab(null);
+	//public static final Block goldenStalksBottom = new BlockStalks("goldenStalksBottom", "Golden Stalks", false).setCreativeTab(null);
 	public static final BlockModFlower goldenBulb = (BlockModFlower) new BlockModFlower("goldenBulb", "Golden Bulb").setCreativeTab(null);
 	public static final BlockModFlower goldenBloom = (BlockModFlower) new BlockModFlower("goldenBloom", "Golden Bloom").setCreativeTab(null);
 	public static final BlockModFlower goldenStalks = (BlockModFlower) new BlockModFlower("goldenStalks", "Golden Stalks").setCreativeTab(null);
@@ -365,7 +365,7 @@ public class JourneyBlocks {
 	public static final BlockModFlower infernoPlant = new BlockModFlower("infernoPlant", "Inferno Plant");
 	public static final BlockModFlower burntGrass = new BlockModFlower("burntGrass", "Burnt Grass");
 	
-	public static final Block grindstone = new BlockGrindstone("grindstone");
+	//public static final Block grindstone = new BlockGrindstone("grindstone");
 	public static final Block blueGems = new BlockGemBlock("blueGems", "Blue Gems", false);
 	public static final Block redGems = new BlockGemBlock("redGems", "Red Gems", true);
 	

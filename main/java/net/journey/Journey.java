@@ -19,7 +19,7 @@ public class Journey {
 	@Instance(SlayerAPI.MOD_ID)
 	public static Journey instance;
 	
-	@SidedProxy(clientSide = "net.journey.main.proxy.ClientProxy", serverSide = "net.journey.main.proxy.CommonProxy")
+	@SidedProxy(clientSide = "net.journey.proxy.ClientProxy", serverSide = "net.journey.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	
 	@EventHandler

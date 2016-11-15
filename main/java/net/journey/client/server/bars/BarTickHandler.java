@@ -27,7 +27,7 @@ public class BarTickHandler {
 	private EntityPlayer player;
 	private int ticks = 10;
 
-	public static int darkAmount, essenceAmount, powerAmount;
+	public static int darkAmount, powerAmount;
 	@CapabilityInject(IEssenceBar.class)
 	public static Capability<IEssenceBar> ESSENCE_CAP = null;
 
@@ -80,18 +80,16 @@ public class BarTickHandler {
 				GuiIngame gig = mc.ingameGUI;
 				ScaledResolution scaledresolution = new ScaledResolution(mc);
 				mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.MOD_ID, "textures/gui/misc.png"));
-				//int sw = scaledresolution.getScaledWidth(), sh = scaledresolution.getScaledHeight();
 				int y = scaledresolution.getScaledHeight() - 30, x = 10, x1 = 10, x2 = 10;
 				gig.drawTexturedModalRect(x - 10, y + 10, 0, 177, 117, 19);
 				gig.drawTexturedModalRect(x - 10, y - 5, 0, 177, 117, 19);
 				gig.drawTexturedModalRect(x - 10, y - 20, 0, 177, 117, 19);
 
 				gig.drawTexturedModalRect(x - 6, y - 13, 0, 23, 109, 5);
-				for(int i = 0; i < essenceAmount; i++) {
-					if(!(i >= 10)) {
-						x += 11;
-						gig.drawTexturedModalRect(x - 17, y - 13, 0, 0, 10, 5);
-					}
+
+				for(int i = 0; i < player.getCapability(ESSENCE_CAP, null).getBarValue(); i++) {
+					x += 11;
+					gig.drawTexturedModalRect(x - 17, y - 13, 0, 0, 10, 5);
 				}
 				y += 15;
 				gig.drawTexturedModalRect(x1 - 6, y - 13, 0, 36, 109, 5);
@@ -112,9 +110,9 @@ public class BarTickHandler {
 	}
 
 	private void tickEnd(EntityPlayer player) {
-		IEssenceBar essence = ESSENCE_CAP.getDefaultInstance();
-		if(ticks-- <= 0) ticks = 10;
-		if(ticks >= 10) {
+		final IEssenceBar essence = player.getCapability(ESSENCE_CAP, null);
+		if(ticks-- <= 0) ticks = 20;
+		if(ticks >= 20) {
 			//DarkEnergyBar.getProperties(player).updateAllBars();
 			essence.updateAllBars();
 			//PowerBar.getProperties(player).updateAllBars();

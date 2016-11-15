@@ -10,15 +10,14 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.Capability.IStorage;
 
 public class EssenceStorage implements Capability.IStorage<IEssenceBar>{
-
+	
 	@Override
 	public NBTBase writeNBT(Capability<IEssenceBar> capability, IEssenceBar instance, EnumFacing side) {
-		BarTickHandler.essenceAmount = instance.getBarValue();
-		return new NBTTagByte((byte)1);
+		return new NBTTagByte((byte)0);
 	}
 
 	@Override
 	public void readNBT(Capability<IEssenceBar> capability, IEssenceBar instance, EnumFacing side, NBTBase nbt) {
-		
+
 	}
 }

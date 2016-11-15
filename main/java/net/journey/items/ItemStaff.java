@@ -7,10 +7,12 @@ import net.journey.client.server.bars.BarTickHandler;
 import net.journey.client.server.bars.EssenceBar;
 import net.journey.client.server.bars.IEssenceBar;
 import net.journey.entity.projectile.EntityBasicProjectile;
+import net.journey.util.LangHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -40,13 +42,14 @@ public class ItemStaff extends ItemMod {
 
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
-		IEssenceBar bar1 = BarTickHandler.ESSENCE_CAP.getDefaultInstance();
+		final IEssenceBar bar1 = player.getCapability(BarTickHandler.ESSENCE_CAP, null);
 		if(essence) {
+
 			if(!world.isRemote && bar1.useBar(usage)) {
 				//EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
 				if(!unBreakable) stack.damageItem(1, player);
 				try {
-					world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
+					//world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -62,15 +65,15 @@ public class ItemStaff extends ItemMod {
 				}
 			}
 		}*/
-		return super.onItemRightClick(stack, world, player, hand);
+		return new ActionResult(EnumActionResult.PASS, stack);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
 		list.add(SlayerAPI.Colour.DARK_GREEN + damage + " Ranged Damage");
-		//if(essence) LangHelper.useDarkEnergy(usage);
-		//else LangHelper.useDarkEnergy(usage);
+		if(essence) LangHelper.useDarkEnergy(usage);
+		else LangHelper.useDarkEnergy(usage);
 		if(unBreakable) list.add("Infinate Uses");
 		else list.add(stack.getMaxDamage() - stack.getItemDamage() + " Uses Remaining");
 	}

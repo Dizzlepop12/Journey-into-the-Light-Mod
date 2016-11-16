@@ -2,15 +2,20 @@ package net.journey.proxy;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.client.GuiHandler;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayerapi.base.SlayerAPI;
 
 public class ClientProxy extends CommonProxy {
 
 	@Override
-	public void registerClient() { }
+	public void registerClient() { 
+		/*NetworkRegistry.INSTANCE.registerGuiHandler(Journey.instance, new GuiHandler());
+		if(!SlayerAPI.DEVMODE) SlayerAPI.registerEvent(new UpdateCheckerEvent()); */
+	}
 
 	@Override
 	public void clientPreInit() { }

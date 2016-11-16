@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
 import net.journey.util.LangHelper;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -112,7 +113,7 @@ public class ItemModBow extends ItemMod {
 
 			if(itemstack != null || flag) {
 				if(itemstack == null) {
-					itemstack = new ItemStack(Items.ARROW);
+					itemstack = new ItemStack(JourneyItems.essenceArrow);
 				}
 
 				float f = getArrowVelocity(i);
@@ -121,7 +122,7 @@ public class ItemModBow extends ItemMod {
 					boolean flag1 = entityplayer.capabilities.isCreativeMode || (itemstack.getItem() instanceof ItemArrow ? ((ItemArrow)itemstack.getItem()).isInfinite(itemstack, stack, entityplayer) : false);
 
 					if(!worldIn.isRemote) {
-						ItemArrow itemarrow = (ItemArrow)((ItemArrow)(itemstack.getItem() instanceof ItemArrow ? itemstack.getItem() : Items.ARROW));
+						ItemArrow itemarrow = (ItemArrow)((ItemArrow)(itemstack.getItem() instanceof ItemArrow ? itemstack.getItem() : JourneyItems.essenceArrow));
 						EntityArrow entityarrow = itemarrow.createArrow(worldIn, itemstack, entityplayer);
 						entityarrow.setAim(entityplayer, entityplayer.rotationPitch, entityplayer.rotationYaw, 0.0F, f * 3.0F, 1.0F);
 

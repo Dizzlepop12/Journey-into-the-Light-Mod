@@ -22,6 +22,7 @@ import net.journey.entity.projectile.EntityFrostyPiercer;
 import net.journey.entity.projectile.EntityFrozenArrow;
 import net.journey.entity.projectile.EntityFrozenPiercer;
 import net.journey.entity.projectile.EntityGreenpace;
+import net.journey.entity.projectile.EntityHealthArrow;
 import net.journey.entity.projectile.EntityHellstone;
 import net.journey.entity.projectile.EntityIceBall;
 import net.journey.entity.projectile.EntityLightningBall;
@@ -651,6 +652,8 @@ public class JourneyItems {
 	public static final Item lavenderBow = new ItemModBow("lavenderBow", "Lavender Bow", 892, 6, essenceArrow, "Slows enemies", EntityFrozenArrow.class);
 	public static final Item terralightBow = new ItemModBow("terralightBow", "Terralight Bow", 384, 7, essenceArrow, "Poisons enemies", EntityPoisonArrow.class);
 	public static final Item terrianBow = new ItemModBow("terrianBow", "Terrian Bow", 384, 6, essenceArrow, "Poisons enemies", EntityPoisonArrow.class);
+	
+	public static final Item testbow = new ItemModBow("testbow", "Test Bow", 384, 6, essenceArrow, "Poisons enemies", EntityHealthArrow.class);
 
 	//public static final Item backpack = new ItemBackpack("backpack");
 

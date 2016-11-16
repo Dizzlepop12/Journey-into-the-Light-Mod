@@ -44,7 +44,6 @@ public class ItemStaff extends ItemMod {
 	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
 		final IEssenceBar bar1 = player.getCapability(BarTickHandler.ESSENCE_CAP, null);
 		if(essence) {
-
 			if(!world.isRemote && bar1.useBar(usage)) {
 				//EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
 				if(!unBreakable) stack.damageItem(1, player);

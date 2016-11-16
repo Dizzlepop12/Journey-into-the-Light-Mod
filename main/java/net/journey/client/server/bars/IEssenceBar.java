@@ -10,6 +10,4 @@ public interface IEssenceBar {
 	void setBarValue(int mana);
 	void removeBarPoints(int mana);
 	void updateAllBars();
-	//NBTTagCompound write(NBTTagCompound nbt);
-	//void read(NBTTagCompound nbt);
 }

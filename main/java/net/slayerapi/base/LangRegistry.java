@@ -1,5 +1,6 @@
 package net.slayerapi.base;
 
+import java.awt.Window;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -9,13 +10,16 @@ import java.util.ArrayList;
 import net.journey.util.EnumArmor;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.slayerapi.item.ItemModArmor;
+import scala.Function;
+import scala.tools.nsc.transform.patmat.ScalaLogic.TreesAndTypesDomain.Var;
 
 public class LangRegistry {
 
 	public static LangRegistry instance = new LangRegistry();
-
+	
 	public String location = System.getProperty("user.home") + "/Desktop/";
 	private BufferedWriter writer;
+
 	public static ArrayList<String> 
 		blockUnloc = new ArrayList<String>(), 
 		blockFinal = new ArrayList<String>(), 
@@ -25,7 +29,7 @@ public class LangRegistry {
 	
 	public static ArrayList<String> 
 		mobUnloc = new ArrayList<String>(), 
-		mobFinal = new ArrayList<String>(), 
+		mobFinal = new ArrayList<String>(),  
 		armourUnloc = new ArrayList<String>(), 
 		armorType = new ArrayList<String>(), 
 		armorPiece = new ArrayList<String>();

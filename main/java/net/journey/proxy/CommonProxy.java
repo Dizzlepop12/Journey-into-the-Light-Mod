@@ -25,6 +25,9 @@ public class CommonProxy {
 	public void clientPreInit() { }
 	public void registerSounds() { }
 	public void registerModModels() { }
+	public void updateDarkEnergy(int amount) { }
+	public void updateEssence(int amount) { }
+	public void updatePower(int amount) { }
 	
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.init(event);

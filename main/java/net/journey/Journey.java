@@ -2,6 +2,9 @@ package net.journey;
 
 import java.util.ArrayList;
 
+import net.journey.event.message.MessageDarkEnergyBar;
+import net.journey.event.message.MessageEssenceBar;
+import net.journey.event.message.MessagePowerBar;
 import net.journey.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -11,6 +14,9 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.relauncher.Side;
 import net.slayerapi.base.SlayerAPI;
 
 @Mod(name = SlayerAPI.MOD_NAME, modid = SlayerAPI.MOD_ID, version = SlayerAPI.MOD_VERSION)
@@ -22,8 +28,14 @@ public class Journey {
 	@SidedProxy(clientSide = "net.journey.proxy.ClientProxy", serverSide = "net.journey.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	
+	public static SimpleNetworkWrapper wrapper;
+	
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {
+		wrapper = NetworkRegistry.INSTANCE.newSimpleChannel("EssenceNetwork");
+		wrapper.registerMessage(MessageDarkEnergyBar.DarkEnergyHandler.class, MessageDarkEnergyBar.class, 0, Side.CLIENT);
+		wrapper.registerMessage(MessageEssenceBar.EssenceHandler.class, MessageEssenceBar.class, 1, Side.CLIENT);
+		wrapper.registerMessage(MessagePowerBar.PowerHandler.class, MessagePowerBar.class, 2, Side.CLIENT);
 		proxy.preInit(event);
 		proxy.registerClient();
 		proxy.clientPreInit();

@@ -27,10 +27,11 @@ public class BarTickHandler {
 	private EntityPlayer player;
 	private int ticks = 10;
 
-	public static int darkAmount, powerAmount;
 	@CapabilityInject(IEssenceBar.class)
 	public static Capability<IEssenceBar> ESSENCE_CAP = null;
-
+	public static int darkAmount, essenceAmount, powerAmount;
+	public static boolean regenDark, regenEssence, regenPower;
+	
 	@SubscribeEvent
 	public void onEntityConstructing(AttachCapabilitiesEvent evt) {
 		evt.addCapability(new ResourceLocation(SlayerAPI.MOD_ID, "IEssenceBar"), new ICapabilitySerializable<NBTPrimitive>() {

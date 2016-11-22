@@ -3,9 +3,18 @@ package net.journey.items;
 import java.util.List;
 
 import net.journey.JourneyTabs;
+import net.journey.client.server.bars.BarTickHandler;
+import net.journey.client.server.bars.essence.EssenceBar;
+import net.journey.client.server.bars.essence.IEssenceBar;
 import net.journey.entity.projectile.EntityBasicProjectile;
+import net.journey.enums.EnumSounds;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
+import net.minecraft.world.World;
 import net.slayerapi.base.SlayerAPI;
 import net.slayerapi.item.ItemMod;
 
@@ -24,11 +33,11 @@ public class ItemGun extends ItemMod {
 		setFull3D();
 	}
 
-	@SuppressWarnings("")
-	/*@Override
-	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-		if(!world.isRemote && EssenceBar.getProperties(player).useBar(2)) {
-			EnumSounds.playSound(EnumSounds.PLASMA, world, player);
+	@Override
+	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
+		final IEssenceBar bar1 = player.getCapability(BarTickHandler.ESSENCE_CAP, null);
+		if(!world.isRemote && bar1.useBar(2, player)) {
+			//EnumSounds.playSound(EnumSounds.PLASMA, world, player);
 			try {
 				world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
 				stack.damageItem(1, player);
@@ -36,8 +45,8 @@ public class ItemGun extends ItemMod {
 				e.printStackTrace();
 			}
 		}
-		return stack;
-	}*/
+		return new ActionResult(EnumActionResult.PASS, stack);
+	}
 
 	@Override
 	public void addInformation(ItemStack i, EntityPlayer p, List l) {

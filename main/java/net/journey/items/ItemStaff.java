@@ -4,8 +4,9 @@ import java.util.List;
 
 import net.journey.JourneyTabs;
 import net.journey.client.server.bars.BarTickHandler;
-import net.journey.client.server.bars.EssenceBar;
-import net.journey.client.server.bars.IEssenceBar;
+import net.journey.client.server.bars.darkEnergy.IDarkEnergyBar;
+import net.journey.client.server.bars.essence.EssenceBar;
+import net.journey.client.server.bars.essence.IEssenceBar;
 import net.journey.entity.projectile.EntityBasicProjectile;
 import net.journey.util.LangHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -43,19 +44,10 @@ public class ItemStaff extends ItemMod {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
 		final IEssenceBar bar1 = player.getCapability(BarTickHandler.ESSENCE_CAP, null);
+		final IDarkEnergyBar bar2 = player.getCapability(BarTickHandler.DARK_CAP, null);
 		if(essence) {
-			if(!world.isRemote && bar1.useBar(usage)) {
+			if(!world.isRemote && bar1.useBar(usage, player)) {
 				//EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
-				if(!unBreakable) stack.damageItem(1, player);
-				try {
-					//world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		} /*else {
-			if(!world.isRemote && DarkEnergyBar.getProperties(player).useBar(usage)) {
-				EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
 				if(!unBreakable) stack.damageItem(1, player);
 				try {
 					world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
@@ -63,7 +55,17 @@ public class ItemStaff extends ItemMod {
 					e.printStackTrace();
 				}
 			}
-		}*/
+		} else {
+			if(!world.isRemote && bar2.useBar(usage, player)) {
+				//EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
+				if(!unBreakable) stack.damageItem(1, player);
+				try {
+					world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
 		return new ActionResult(EnumActionResult.PASS, stack);
 	}
 

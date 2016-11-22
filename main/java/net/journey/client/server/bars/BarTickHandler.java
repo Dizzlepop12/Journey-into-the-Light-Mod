@@ -1,5 +1,7 @@
 package net.journey.client.server.bars;
 
+import net.journey.client.server.bars.darkEnergy.IDarkEnergyBar;
+import net.journey.client.server.bars.essence.IEssenceBar;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
@@ -29,9 +31,12 @@ public class BarTickHandler {
 
 	@CapabilityInject(IEssenceBar.class)
 	public static Capability<IEssenceBar> ESSENCE_CAP = null;
-	public static int darkAmount, essenceAmount, powerAmount;
-	public static boolean regenDark, regenEssence, regenPower;
+	@CapabilityInject(IDarkEnergyBar.class)
+	public static Capability<IDarkEnergyBar> DARK_CAP = null;
 	
+	public static int darkAmount, essenceAmount;
+	public static boolean regenDark, regenEssence;
+
 	@SubscribeEvent
 	public void onEntityConstructing(AttachCapabilitiesEvent evt) {
 		evt.addCapability(new ResourceLocation(SlayerAPI.MOD_ID, "IEssenceBar"), new ICapabilitySerializable<NBTPrimitive>() {
@@ -54,6 +59,29 @@ public class BarTickHandler {
 			@Override
 			public void deserializeNBT(NBTPrimitive nbt) {
 				ESSENCE_CAP.getStorage().readNBT(ESSENCE_CAP, inst, null, nbt);
+			}
+		});
+		
+		evt.addCapability(new ResourceLocation(SlayerAPI.MOD_ID, "IDarkEnergyBar"), new ICapabilitySerializable<NBTPrimitive>() {
+			IDarkEnergyBar inst = DARK_CAP.getDefaultInstance();
+			@Override
+			public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
+				return capability == DARK_CAP;
+			}
+
+			@Override
+			public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
+				return capability == DARK_CAP ? DARK_CAP.<T>cast(inst) : null;
+			}
+
+			@Override
+			public NBTPrimitive serializeNBT() {
+				return (NBTPrimitive)DARK_CAP.getStorage().writeNBT(DARK_CAP, inst, null);
+			}
+
+			@Override
+			public void deserializeNBT(NBTPrimitive nbt) {
+				DARK_CAP.getStorage().readNBT(DARK_CAP, inst, null, nbt);
 			}
 		});
 	}
@@ -84,25 +112,19 @@ public class BarTickHandler {
 				int y = scaledresolution.getScaledHeight() - 30, x = 10, x1 = 10, x2 = 10;
 				gig.drawTexturedModalRect(x - 10, y + 10, 0, 177, 117, 19);
 				gig.drawTexturedModalRect(x - 10, y - 5, 0, 177, 117, 19);
-				gig.drawTexturedModalRect(x - 10, y - 20, 0, 177, 117, 19);
-
+				
 				gig.drawTexturedModalRect(x - 6, y - 13, 0, 23, 109, 5);
-
 				for(int i = 0; i < player.getCapability(ESSENCE_CAP, null).getBarValue(); i++) {
 					x += 11;
 					gig.drawTexturedModalRect(x - 17, y - 13, 0, 0, 10, 5);
 				}
 				y += 15;
 				gig.drawTexturedModalRect(x1 - 6, y - 13, 0, 36, 109, 5);
-				for(int i = 0; i < darkAmount; i++) {
+				for(int i = 0; i < player.getCapability(DARK_CAP, null).getBarValue(); i++) {
 					x1 += 11;
 					gig.drawTexturedModalRect(x1 - 17, y - 13, 0, 5, 10, 5);
 				}
-				gig.drawTexturedModalRect(x2 - 6, y + 2, 0, 49, 109, 5);
-				for(int i = 0; i < powerAmount; i++) {
-					x2 += 11;
-					gig.drawTexturedModalRect(x2 - 17, y + 2, 0, 10, 10, 5);
-				}
+				
 				GlStateManager.disableAlpha();
 				GlStateManager.disableBlend();
 				GL11.glPopMatrix();
@@ -112,14 +134,16 @@ public class BarTickHandler {
 
 	private void tickEnd(EntityPlayer player) {
 		final IEssenceBar essence = player.getCapability(ESSENCE_CAP, null);
+		final IDarkEnergyBar dark = player.getCapability(DARK_CAP, null);
+
 		if(ticks-- <= 0) ticks = 20;
 		if(ticks >= 20) {
-			//DarkEnergyBar.getProperties(player).updateAllBars();
-			essence.updateAllBars();
+			dark.updateAllBars(player);
+			essence.updateAllBars(player);
 			//PowerBar.getProperties(player).updateAllBars();
 		}
-		//DarkEnergyBar.getProperties(player).mainUpdate();
-		essence.mainUpdate();
+		dark.mainUpdate(player);
+		essence.mainUpdate(player);
 		//PowerBar.getProperties(player).mainUpdate();
 	}
 }

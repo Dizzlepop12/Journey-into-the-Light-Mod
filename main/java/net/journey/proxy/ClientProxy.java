@@ -2,9 +2,11 @@ package net.journey.proxy;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.client.EntityRendering;
 import net.journey.client.GuiHandler;
 import net.journey.client.server.bars.BarTickHandler;
-import net.journey.client.server.bars.IEssenceBar;
+import net.journey.client.server.bars.darkEnergy.IDarkEnergyBar;
+import net.journey.client.server.bars.essence.IEssenceBar;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -21,7 +23,9 @@ public class ClientProxy extends CommonProxy {
 	}
 
 	@Override
-	public void clientPreInit() { }
+	public void clientPreInit() {
+		EntityRendering.init();
+	}
 
 	@Override
 	public void clientInit(FMLInitializationEvent event) { }
@@ -41,17 +45,13 @@ public class ClientProxy extends CommonProxy {
 	
 	@Override
 	public void updateDarkEnergy(int amount) {
-		//DarkEnergyBar.getProperties(Minecraft.getMinecraft().thePlayer).setBarValue(amount);
+		final IDarkEnergyBar dark = Minecraft.getMinecraft().thePlayer.getCapability(BarTickHandler.DARK_CAP, null);
+		dark.setBarValue(amount, Minecraft.getMinecraft().thePlayer);
 	}
 	
 	@Override
 	public void updateEssence(int amount) {
 		final IEssenceBar essence = Minecraft.getMinecraft().thePlayer.getCapability(BarTickHandler.ESSENCE_CAP, null);
-		essence.setBarValue(amount);
-	}
-	
-	@Override
-	public void updatePower(int amount) {
-		//PowerBar.getProperties(Minecraft.getMinecraft().thePlayer).setBarValue(amount);
+		essence.setBarValue(amount, Minecraft.getMinecraft().thePlayer);
 	}
 }

@@ -1,14 +1,16 @@
 package net.journey.proxy;
 
-import java.beans.EventHandler;
-
 import net.journey.JourneyTabs;
 import net.journey.client.server.bars.BarTickHandler;
-import net.journey.client.server.bars.EssenceBar;
-import net.journey.client.server.bars.EssenceStorage;
-import net.journey.client.server.bars.IEssenceBar;
+import net.journey.client.server.bars.darkEnergy.DarkEnergyBar;
+import net.journey.client.server.bars.darkEnergy.DarkEnergyStorage;
+import net.journey.client.server.bars.darkEnergy.IDarkEnergyBar;
+import net.journey.client.server.bars.essence.EssenceBar;
+import net.journey.client.server.bars.essence.EssenceStorage;
+import net.journey.client.server.bars.essence.IEssenceBar;
 import net.journey.enums.EnumSounds;
 import net.journey.util.Config;
+import net.journey.util.EntityRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -27,13 +29,14 @@ public class CommonProxy {
 	public void registerModModels() { }
 	public void updateDarkEnergy(int amount) { }
 	public void updateEssence(int amount) { }
-	public void updatePower(int amount) { }
 	
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.init(event);
 		JourneyTabs.init();
+		EntityRegistry.init();
 		EnumSounds.init();
 		CapabilityManager.INSTANCE.register(IEssenceBar.class, new EssenceStorage(), EssenceBar.class);
+		CapabilityManager.INSTANCE.register(IDarkEnergyBar.class, new DarkEnergyStorage(), DarkEnergyBar.class);
         MinecraftForge.EVENT_BUS.register(new BarTickHandler());
 		if(SlayerAPI.DEVMODE) LangRegistry.instance.register();
 	}

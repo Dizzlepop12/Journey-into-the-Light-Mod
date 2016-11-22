@@ -9,6 +9,7 @@ import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
@@ -39,7 +40,7 @@ public class ItemPiercer extends ItemMod {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		return super.onItemRightClick(stack, w, player, hand);
+		return new ActionResult(EnumActionResult.PASS, stack);
 	}
 	
 	@Override

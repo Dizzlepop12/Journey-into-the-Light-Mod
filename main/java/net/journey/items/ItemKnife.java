@@ -9,6 +9,7 @@ import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
@@ -39,11 +40,11 @@ public class ItemKnife extends ItemMod {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		return super.onItemRightClick(stack, w, player, hand);
+		return new ActionResult(EnumActionResult.PASS, stack);
 	}
 	
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
-		list.add(damage + "Ranged Damage");
+		list.add(damage + " Ranged Damage");
 	}
 }

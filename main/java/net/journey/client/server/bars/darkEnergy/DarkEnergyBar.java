@@ -29,7 +29,6 @@ public class DarkEnergyBar implements IDarkEnergyBar {
 	public void mainUpdate(EntityPlayer player) {
 		if(getBarValue() >= 10) darkEnergy = 10;
 		if(player instanceof EntityPlayerMP) Journey.wrapper.sendTo(new MessageDarkEnergyBar(darkEnergy, regenDelay == 0), (EntityPlayerMP)player);
-		System.out.println(darkEnergy);
 	}
 
 	@Override
